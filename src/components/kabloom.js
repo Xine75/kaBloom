@@ -3,9 +3,9 @@ import { Route, Redirect } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationViews";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
-import "./kabloom.css";
+import "./Kabloom.css";
 
-export const kabloom = () => (
+export const Kabloom = () => (
   <>
     <Route
       render={() => {
