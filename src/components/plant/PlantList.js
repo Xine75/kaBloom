@@ -21,13 +21,11 @@ export const PlantList = () => {
     return (
         <>
             <div className="plants">
-                {/*map over plants and grab only those belonging to current user*/}
+                {/*map over plants and grab only those belonging to current user, then feed each object in the array into PlantCard*/}
                 {
-                    plants.map(plant => {
-                        const userPlants = plants.filter(p => p.userId === currentUser)
-                        return <PlantCard key={plant.id}
-                            plant={userPlants}
-                        />
+                    plants.filter(p => p.userId === currentUser).map(plant => {
+                        
+                        return <PlantCard key={plant.id} plant={plant}/>
                     })
                 }
        <button onClick={() => {history.push("/plant/create")}}>
