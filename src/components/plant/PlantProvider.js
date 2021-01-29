@@ -28,20 +28,20 @@ export const PlantProvider = (props) => {
         .then(getPlants)
     }
 //Get details of a particular plant
-export const getPlantById = (id) => {
-    return fetch(`http://localhost:8080/plants/${plantId}`)
+const getPlantById = (plant) => {
+    return fetch(`http://localhost:8080/plants/${plant.id}`)
     .then(res => res.json())
 }
 //Uh oh! Delete a plant
-const deletePlant = plantId => {
-    return fetch(`http://localhost:8080/plants/${plantId}`, {
+const deletePlant = plant => {
+    return fetch(`http://localhost:8080/plants/${plant.id}`, {
         method: "DELETE"
     })
     .then(getPlants)
 }
 //Let's water today or make another change!
 const updatePlant = plant => {
-    return fetch(`http://localhost:8080/plants/${plantId}`, {
+    return fetch(`http://localhost:8080/plants/${plant.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"

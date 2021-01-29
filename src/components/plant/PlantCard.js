@@ -7,21 +7,25 @@ import "./Plant.css"
 //3. "Last Watered" text field will update to DOM
 //4. Rendering a "More" button that will take user to notes for a specific plant
 
-const history = useHistory()
+// const history = useHistory()
 
-export const PlantCard = ({plant}) => {
+export const PlantCard = ({ plant }) => {
+    {console.log("plant", plant)}
+
+    return (
 
     <section className="plant">
-        <img className="plant__image">{plant.imageURL}</img>
+        <img src={plant.imageURL} className="plant__image"/>
         <h3 className="plant__name">{plant.name}</h3>
         <div className="plant_type">{plant.type}</div>
         <div className="plant_lastWatered">{plant.lastWatered}</div>
-        <button className = "toNoteListBtn" onClick={() => history.push("/note/NoteList")}>
+        {/* <button className = "toNoteListBtn" onClick={() => history.push("/note/NoteList")}>
           More
-      </button>
-        <button className = "toNoteListBtn" onClick={() => plant.lastWatered = new Date(noteObject.timestamp).toLocaleDateString('en-US')}>
+      </button> */}
+        <button className = "plant__wateredToday" onClick={() => plant.lastWatered = new Date(plant.timestamp).toLocaleDateString('en-US')}>
           Watered Today!
       </button>
 
-    </section>  
-}
+    </section> 
+
+    )}

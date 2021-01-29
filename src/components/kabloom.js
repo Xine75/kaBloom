@@ -12,6 +12,7 @@ export const Kabloom = () => (
         if (localStorage.getItem("kabloom_user")) {
           return (
             <>
+              <div className="heading">kaBloom</div>
               <ApplicationViews />
             </>
           );
