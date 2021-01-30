@@ -1,5 +1,6 @@
-import React from "react"
-import { useHistory } from "react-router-dom"
+import React, { useEffect, useContext } from "react"
+import { useHistory, Link } from "react-router-dom"
+import { PlantContext } from "./PlantProvider"
 import "./Plant.css"
 
 //1. Rendering name, type, image and last-watered date of users's plants to the DOM
@@ -11,18 +12,28 @@ export const PlantCard = ({ plant }) => {
     {console.log("plant", plant)}
     const history = useHistory()
     const timestamp = Date.now()
+
+    const UpdateLastWatered = () => {
+        const { updatePlant, getPlants } = useContext(PlantContext)
+        updatePlant(plant.lastWatered= new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp))
+        .then(getPlants)
+    }
     
     return (
 
     <section className="plant">
         <img src={plant.imageURL} className="plant__image"/>
-        <h3 className="plant__name">{plant.name}</h3>
+        <h3 className="plant__name">
+          <Link to={`/plants/detail/${plant.id}`}>
+            { plant.name }
+          </Link>
+        </h3>
         <div className="plant_type">{plant.type}</div>
         <div className="plant_lastWatered">Last watered: {plant.lastWatered}</div>
         <button className = "toNoteListBtn" onClick={() => history.push("/note/NoteList")}>
           More
       </button>
-        <button className = "plant__wateredToday" onClick={() => plant.lastWatered = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp)}>
+        <button className="plant__wateredToday" id={plant.id} onClick={UpdateLastWatered}>
           Watered Today!
       </button>
 
