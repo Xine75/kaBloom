@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react"
-import { useHistory, Link } from "react-router-dom"
+import { useHistory, Link, useParams } from "react-router-dom"
 import { PlantContext } from "./PlantProvider"
 import "./Plant.css"
 
@@ -9,12 +9,14 @@ import "./Plant.css"
 //4. Rendering a "More" button that will take user to notes for a specific plant
 
 export const PlantCard = ({ plant }) => {
+
     {console.log("plant", plant)}
+    const { updatePlant, getPlants } = useContext(PlantContext)
     const history = useHistory()
     const timestamp = Date.now()
 
     const UpdateLastWatered = () => {
-        const { updatePlant, getPlants } = useContext(PlantContext)
+       
         updatePlant(plant.lastWatered= new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp))
         .then(getPlants)
     }
@@ -30,9 +32,6 @@ export const PlantCard = ({ plant }) => {
         </h3>
         <div className="plant_type">{plant.type}</div>
         <div className="plant_lastWatered">Last watered: {plant.lastWatered}</div>
-        <button className = "toNoteListBtn" onClick={() => history.push("/note/NoteList")}>
-          More
-      </button>
         <button className="plant__wateredToday" id={plant.id} onClick={UpdateLastWatered}>
           Watered Today!
       </button>
