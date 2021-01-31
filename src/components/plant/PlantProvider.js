@@ -28,8 +28,8 @@ export const PlantProvider = (props) => {
         .then(getPlants)
     }
 //Get details of a particular plant
-const getPlantById = (plant) => {
-    return fetch(`http://localhost:8080/plants/${plant.id}`)
+const getPlantById = (id) => {
+    return fetch(`http://localhost:8080/plants/${id}?_embed=notes`)
     .then(res => res.json())
 }
 //Uh oh! Delete a plant

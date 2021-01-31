@@ -4,9 +4,10 @@ import { Home } from "./Home"
 
 import { PlantProvider } from "./plant/PlantProvider"
 import { PlantList } from "./plant/PlantList"
+import { PlantDetail } from "./plant/PlantDetail"
 // import { PlantForm } from "./plant/PlantForm"
 
-// import { NoteProvider } from "./note/NoteProvider"
+import { NoteProvider } from "./note/NoteProvider"
 
 export const ApplicationViews = () => {
     return (
@@ -18,13 +19,13 @@ export const ApplicationViews = () => {
                 </Route>
             </PlantProvider>
 
-            {/* <NoteProvider>
+            <NoteProvider>
                 <PlantProvider>
-                    <Route exact path="/plant/create">
-                        <PlantForm />
+                    <Route exact path="/plants/detail/:plantId(\d+)">
+                        <PlantDetail />
                     </Route>
                 </PlantProvider>
-            </NoteProvider> */}
+            </NoteProvider>
 
 
 
