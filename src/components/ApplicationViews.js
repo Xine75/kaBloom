@@ -5,7 +5,7 @@ import { Home } from "./Home"
 import { PlantProvider } from "./plant/PlantProvider"
 import { PlantList } from "./plant/PlantList"
 import { PlantDetail } from "./plant/PlantDetail"
-// import { PlantForm } from "./plant/PlantForm"
+import { PlantForm } from "./plant/PlantForm"
 
 import { NoteProvider } from "./note/NoteProvider"
 import { NoteList } from "./note/NoteList"
@@ -22,6 +22,7 @@ export const ApplicationViews = () => {
 
             <NoteProvider>
                 <PlantProvider>
+
                     <Route exact path="/plants/detail/:plantId(\d+)">
                         <PlantDetail />
                     </Route>
@@ -29,6 +30,11 @@ export const ApplicationViews = () => {
                     <Route exact path="/plants/detail/:plantId(\d+)">
                         <NoteList />
                     </Route>
+
+                    <Route exact path="/plant/create">
+                        <PlantForm />
+                    </Route>
+
                 </PlantProvider>
             </NoteProvider>
 
