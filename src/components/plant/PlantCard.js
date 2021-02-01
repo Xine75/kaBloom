@@ -1,5 +1,5 @@
-import React, { useEffect, useContext } from "react"
-import { useHistory, Link, useParams } from "react-router-dom"
+import React, { useContext } from "react"
+import { useHistory, Link } from "react-router-dom"
 import { PlantContext } from "./PlantProvider"
 import "./Plant.css"
 
@@ -10,13 +10,12 @@ import "./Plant.css"
 
 export const PlantCard = ({ plant }) => {
 
-    {console.log("plant", plant)}
     const { updatePlant, getPlants } = useContext(PlantContext)
     const history = useHistory()
     const timestamp = Date.now()
 
 
-    const UpdateLastWatered = (event) => {
+    const UpdateLastWatered = () => {
         const updatedPlant = { ...plant }
         updatedPlant.lastWatered= new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp)
         updatePlant(updatedPlant)
@@ -36,8 +35,6 @@ export const PlantCard = ({ plant }) => {
         <button className="plant__wateredToday" id={plant.id} onClick={UpdateLastWatered}>
           Watered Today!
       </button>
-
-      {console.log("plant.lastWatered", plant.lastWatered)}
       
     </section> 
     )}
