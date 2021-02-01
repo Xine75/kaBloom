@@ -8,6 +8,7 @@ import { PlantDetail } from "./plant/PlantDetail"
 // import { PlantForm } from "./plant/PlantForm"
 
 import { NoteProvider } from "./note/NoteProvider"
+import { NoteList } from "./note/NoteList"
 
 export const ApplicationViews = () => {
     return (
@@ -24,11 +25,12 @@ export const ApplicationViews = () => {
                     <Route exact path="/plants/detail/:plantId(\d+)">
                         <PlantDetail />
                     </Route>
+
+                    <Route exact path="/plants/detail/:plantId(\d+)">
+                        <NoteList />
+                    </Route>
                 </PlantProvider>
             </NoteProvider>
-
-
-
 
         </>
 

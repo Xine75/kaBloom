@@ -11,7 +11,7 @@ export const PlantProvider = (props) => {
 
 //Get plants from the API
     const getPlants = () => {
-        return fetch("http://localhost:8080/plants")
+        return fetch("http://localhost:8080/plants?_embed=notes")
         .then(res => res.json())
         .then(setPlants)
     }
