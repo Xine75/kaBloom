@@ -15,12 +15,13 @@ export const PlantCard = ({ plant }) => {
     const history = useHistory()
     const timestamp = Date.now()
 
-    const UpdateLastWatered = () => {
-       
-        updatePlant(plant.lastWatered= new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp))
+
+    const UpdateLastWatered = (event) => {
+        const updatedPlant = { ...plant }
+        updatedPlant.lastWatered= new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp)
+        updatePlant(updatedPlant)
         .then(getPlants)
     }
-    
     return (
 
     <section className="plant">
@@ -39,7 +40,5 @@ export const PlantCard = ({ plant }) => {
       {console.log("plant.lastWatered", plant.lastWatered)}
       
     </section> 
-  
-
     )}
 
