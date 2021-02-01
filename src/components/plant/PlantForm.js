@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, setState, useContext } from "react";
 import { useHistory, useParams } from 'react-router-dom';
 import { PlantContext } from "./PlantProvider"
 import { NoteContext } from "../note/NoteProvider"
@@ -9,12 +9,28 @@ import "./Plant.css"
 //2. Utilizes Cloudinary to upload and save image of plant
 
 export const PlantForm = () => {
-    ////--------------IMAGE UPLOAD HANDLING --------------------
+    const { addPlant } = useContext(PlantContext)
+    const history = useHistory()
+    const currentUser = parseInt(localStorage.getItem("kabloom_user"))
+    const [imageURL, setImageURL ] = useState("")
+    const [plant, setPlant] = useState({
+        userId: currentUser,
+        type: "",
+        name: "",
+        dateAdopted: "",
+        water: "",
+        light: "",
+        fertilize: "",
+        lastWatered: "",
+        imageURL: ""
+    })
 
-    const [image, setImage] = useState("")
+    ////--------------IMAGE UPLOAD HANDLING --------------------
     const [loading, setLoading] = useState(false)
+    
 
     const uploadImage = async e => {
+        
         const files = e.target.files
         const data = new FormData()
         data.append("file", files[0])
@@ -29,47 +45,24 @@ export const PlantForm = () => {
         )
         const file = await response.json()
 
-        setImage(file.secure_url)
+        setImageURL(file.secure_url)
         setLoading(false)
     }
+  
     ///-----------Rest of plant details handling----------------
-    const { addPlant } = useContext(PlantContext)
-    const { addNote } = useContext(NoteContext)
-    const history = useHistory()
-
-    const [plant, setPlant] = useState({
-        id: 0,
-        userId: 0,
-        type: "",
-        name: "",
-        dateAdopted: "",
-        water: "",
-        light: "",
-        fertilize: "",
-        lastWatered: "",
-        imageURL: ""
-    })
-
     const handleControlledInputChange = (e) => {
         const newPlant = { ...plant }
         newPlant[e.target.id] = e.target.value
         setPlant(newPlant)
     }
 
-    const handleClickSavePlant = () => {
-        addPlant({
-            id: plant.id,
-            userId: parseInt(plant.userId),
-            type: plant.type,
-            name: plant.name,
-            dateAdopted: plant.dateAdopted,
-            water: plant.water,
-            light: plant.light,
-            fertilize: plant.fertilize,
-            lastWatered: plant.lastWatered,
-            imageURL: plant.imageURL
-        })
-            .then(() => history.push(`/plants/detail/${plant.id}`))
+    const handleClickSavePlant = (e) => {
+        e.preventDefault()
+        const newPlant = { ...plant, imageURL }
+      
+        addPlant(newPlant)
+        
+            .then(() => history.push("/"))
     }
 
 
@@ -79,16 +72,11 @@ export const PlantForm = () => {
 
             <div className="image">
                 <div>Upload Image</div>
-                <input
-                    type="file"
-                    name="file"
-                    placeholder="Upload an image"
-                    onChange={uploadImage}
-                />
+                <input type="file" name="file" placeholder="Upload an image" onChange={uploadImage}/>
                 {loading ? (
                     <h3>Loading...</h3>
                 ) : (
-                        <img src={image} style={{ width: "100px" }} />
+                        <img src={imageURL} style={{ width: "100px" }} />
                     )}
             </div>
             <fieldset>
@@ -133,6 +121,7 @@ export const PlantForm = () => {
                     <input type="date" id="lastWatered" onChange={handleControlledInputChange} required className="form-control"  value={plant.lastWatered} />
                 </div>
             </fieldset>
+            <button className="btn btn-primary" onClick={handleClickSavePlant}>Save</button>
 
 
         </form>
