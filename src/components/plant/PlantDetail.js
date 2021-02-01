@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { PlantContext } from "./PlantProvider"
-// import { NoteContext } from "../note/NoteProvider"
+import { NoteContext } from "../note/NoteProvider"
 import "./Plant.css"
 
 export const PlantDetail =()=> {
