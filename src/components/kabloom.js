@@ -9,7 +9,7 @@ export const Kabloom = () => (
   <>
     <Route
       render={() => {
-        if (localStorage.getItem("kabloom_user")) {
+        if (sessionStorage.getItem("kabloom_user")) {
           return (
             <>
               <div className="heading">kaBloom</div>
