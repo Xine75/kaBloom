@@ -8,11 +8,14 @@ export const PlantDetail =()=> {
     const [plant, setPlant] = useState({})
     const {plantId} = useParams()
     const history = useHistory()
+    
+
+    
 
     const handleDelete = () => {
         deletePlant(plant.id)
         .then(() => {
-            history.push("/")
+            history.push("/plants")
         })
     }
 
@@ -40,3 +43,6 @@ export const PlantDetail =()=> {
         </section>
       )
 }
+
+// plant.lastWatered = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp)
+// plant.dateAdopted = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp)

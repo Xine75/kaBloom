@@ -14,6 +14,7 @@ export const PlantForm = () => {
     const currentUser = parseInt(sessionStorage.getItem("kabloom_user"))
     const [imageURL, setImageURL ] = useState("")
 
+
     const [plant, setPlant] = useState({
         userId: currentUser,
         type: "",
@@ -53,6 +54,7 @@ export const PlantForm = () => {
     const handleControlledInputChange = (e) => {
         const newPlant = { ...plant }
         newPlant[e.target.id] = e.target.value
+        
         setPlant(newPlant)
     }
         //---------------- SAVING NEW PLANT UPON CLICK EVENT ----------------
@@ -103,8 +105,8 @@ export const PlantForm = () => {
                     <option value="Keep soil moist">Keep soil moist</option>
                     <option value="Let top of soil dry before watering">Let top of soil dry before watering</option>
                     <option value="Let soil dry between waterings">Let soil dry completely between waterings</option>
-                    <option value="Water infrequently (succulents and cacti)">Water infrequently (succulents and cacti)</option>
-                    <option value="Plant is dormant, water with caution (succulents and cacti)">Plant is dormant, water with caution (succulents and cacti)</option>
+                    <option value="Water infrequently">Water infrequently (succulents and cacti)</option>
+                    <option value="Plant is dormant, water with caution">Plant is dormant, water with caution (succulents and cacti)</option>
                 </select>
                 </div>
             </fieldset>
@@ -117,7 +119,7 @@ export const PlantForm = () => {
                     <option value="Bright indirect">Bright indirect</option>
                     <option value="Medium">Medium</option>
                     <option value="Direct">Direct</option>
-                    <option value="s much direct sun as possible (succulents and cacti)">As much direct sun as possible (succulents and cacti)</option>
+                    <option value="As much direct sun as possible">As much direct sun as possible (succulents and cacti)</option>
                 </select>
                 </div>
             </fieldset>
