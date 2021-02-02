@@ -11,9 +11,8 @@ export const NoteList = () => {
     const { notes, getNotes } = useContext(NoteContext)
     const history = useHistory()
     const { plantId } = useParams()
-    console.log("plantId", parseInt(plantId))
-
-    useEffect(() => {
+   
+     useEffect(() => {
         getNotes()
     }, [])
 
@@ -24,12 +23,11 @@ export const NoteList = () => {
                 {/*map over notes and grab only those whose note.plantId matches the current detail/plantId, then feed each object in the array into NoteCard*/}
                 {
                     notes.filter(note => note.plantId === parseInt(plantId)).map(note => {
-                        { console.log("notes", notes) }
 
                         return <NoteCard key={note.id} note={note} />
                     })
                 }
-                <button onClick={() => { history.push("/note/create") }}>
+                <button onClick={() => { history.push(`/note/create/${plantId}`) }}>
                     Add a Note
                 </button>
             </div>

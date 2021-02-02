@@ -1,13 +1,10 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { PlantContext } from "./PlantProvider"
-import { NoteList } from "../note/NoteList"
 import "./Plant.css"
 
 export const PlantDetail =()=> {
     const { getPlantById, deletePlant } = useContext(PlantContext)
-    // const { getNotes, addNote, deleteNote } = useContext(NoteContext)
-
     const [plant, setPlant] = useState({})
     const {plantId} = useParams()
     const history = useHistory()

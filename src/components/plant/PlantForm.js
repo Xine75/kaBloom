@@ -1,18 +1,19 @@
-import React, { useState, setState, useContext } from "react";
-import { useHistory, useParams } from 'react-router-dom';
+import React, { useState, useContext } from "react";
+import { useHistory } from 'react-router-dom';
 import { PlantContext } from "./PlantProvider"
-import { NoteContext } from "../note/NoteProvider"
 import "./Plant.css"
 
 //PlantForm defines a function called PlantForm that:
 //1. Allows user to create and save a new plant
 //2. Utilizes Cloudinary to upload and save image of plant
 
+//------------------ SETTING STATE --------------------------
 export const PlantForm = () => {
     const { addPlant } = useContext(PlantContext)
     const history = useHistory()
     const currentUser = parseInt(localStorage.getItem("kabloom_user"))
     const [imageURL, setImageURL ] = useState("")
+
     const [plant, setPlant] = useState({
         userId: currentUser,
         type: "",
@@ -25,10 +26,9 @@ export const PlantForm = () => {
         imageURL: ""
     })
 
-    ////--------------IMAGE UPLOAD HANDLING --------------------
+    //--------------IMAGE UPLOAD HANDLING --------------------
     const [loading, setLoading] = useState(false)
     
-
     const uploadImage = async e => {
         
         const files = e.target.files
@@ -48,24 +48,22 @@ export const PlantForm = () => {
         setImageURL(file.secure_url)
         setLoading(false)
     }
-  
-    ///-----------Rest of plant details handling----------------
+        //---------------- SAVING USER INPUT-----------------
+
     const handleControlledInputChange = (e) => {
         const newPlant = { ...plant }
         newPlant[e.target.id] = e.target.value
         setPlant(newPlant)
     }
-
+        //---------------- SAVING NEW PLANT UPON CLICK EVENT ----------------
     const handleClickSavePlant = (e) => {
         e.preventDefault()
         const newPlant = { ...plant, imageURL }
-      
         addPlant(newPlant)
-        
             .then(() => history.push("/"))
     }
 
-
+        //---------------- THE ADD NEW PLANT FORM --------------------------
     return (
         <form className="plantForm">
             <h2>Newly Adopted Plant</h2>

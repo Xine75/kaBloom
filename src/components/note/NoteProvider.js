@@ -7,7 +7,7 @@ export const NoteProvider = (props) => {
     //Set a value that will mutate (notes) and the function that will update it (setPlants())
         const [notes, setNotes] = useState([])
     
-    //Get plants from the API
+    //Get notes from the API
         const getNotes = () => {
             return fetch("http://localhost:8080/notes")
             .then(res => res.json())
@@ -33,11 +33,23 @@ export const NoteProvider = (props) => {
         })
         .then(getNotes)
     }
+    //Oops I spelled that wrong - edit note!
+    const updateNote = note => {
+        return fetch(`http://localhost:8080/notes/${note.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(note)
+        })
+        .then(getNotes)
+    }
+
 
     //Allow exposure to data via Context.Provider
     return (
         <NoteContext.Provider value={{
-            notes, getNotes, addNote, deleteNote
+            notes, getNotes, addNote, deleteNote, updateNote
         }}>
             {props.children}
         </NoteContext.Provider>
