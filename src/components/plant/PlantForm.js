@@ -60,7 +60,7 @@ export const PlantForm = () => {
         e.preventDefault()
         const newPlant = { ...plant, imageURL }
         addPlant(newPlant)
-            .then(() => history.push("/"))
+            .then(() => history.push("/plants"))
     }
 
         //---------------- THE ADD NEW PLANT FORM --------------------------
@@ -98,19 +98,39 @@ export const PlantForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Watering instructions:</label>
-                    <input type="text" id="water" onChange={handleControlledInputChange} required className="form-control" placeholder="How thirsty am I?" value={plant.water} />
+                    <select value={plant.water} name="water" id="water" className="form-control" onChange={handleControlledInputChange}>
+                    <option value="0">How thirsty am I?</option>
+                    <option value="Keep soil moist">Keep soil moist</option>
+                    <option value="Let top of soil dry before watering">Let top of soil dry before watering</option>
+                    <option value="Let soil dry between waterings">Let soil dry completely between waterings</option>
+                    <option value="Water infrequently (succulents and cacti)">Water infrequently (succulents and cacti)</option>
+                    <option value="Plant is dormant, water with caution (succulents and cacti)">Plant is dormant, water with caution (succulents and cacti)</option>
+                </select>
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Light needs:</label>
-                    <input type="text" id="light" onChange={handleControlledInputChange} required className="form-control" placeholder="How much sun do I like?" value={plant.light} />
+                    <select value={plant.light} name="light" id="light" className="form-control" onChange={handleControlledInputChange}>
+                    <option value="0">How much sun do I like?</option>
+                    <option value="Low">Low</option>
+                    <option value="Bright indirect">Bright indirect</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Direct">Direct</option>
+                    <option value="s much direct sun as possible (succulents and cacti)">As much direct sun as possible (succulents and cacti)</option>
+                </select>
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Fertilize?:</label>
-                    <input type="text" id="fertilize" onChange={handleControlledInputChange} required className="form-control" placeholder="Feed me" value={plant.fertilize} />
+                    <label htmlFor="name">Fertilize?</label>
+                    <select value={plant.fertilize} name="fertilize" id="fertilize" className="form-control" onChange={handleControlledInputChange}>
+                    <option value="0">Even plants gotta eat</option>
+                    <option value="Monthly">Monthly</option>
+                    <option value="Every other month">Every other month</option>
+                    <option value="Every 6 months">Every 6 months</option>
+                    <option value="Yearly">Yearly</option>
+                </select>
                 </div>
             </fieldset>
             <fieldset>
@@ -120,8 +140,8 @@ export const PlantForm = () => {
                 </div>
             </fieldset>
             <button className="btn btn-primary" onClick={handleClickSavePlant}>Save</button>
-
-
         </form>
     )
 }
+//<input type="text" id="fertilize" onChange={handleControlledInputChange} required className="form-control" placeholder="Feed me" value={plant.fertilize} />
+
