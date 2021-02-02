@@ -17,7 +17,7 @@ export const NoteCard = ({note}) => {
     }
 
     return (
-        <section className="note">
+        <section className="note" id={note.id}>
             <div className="note__date">{note.date}</div>
             <div className="note__text">{note.text}</div>
             <button onClick={handleDelete}>Delete</button>
