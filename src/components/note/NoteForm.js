@@ -11,6 +11,8 @@ export const NoteForm = () => {
     const history = useHistory()
     const {plantId} = useParams()
     const {noteId} = useParams()
+    const timestamp = Date.now()
+    const noteDate = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp)
 
     //------------------SETTING STATE--------------------
 
@@ -33,19 +35,19 @@ export const NoteForm = () => {
         if (noteId){
             updateNote({
                 id: note.id,
-                plantId: plantId,
+                plantId: parseInt(plantId),
                 text: note.text,
-                date: note.date
+                date: noteDate
             })
-            .then(() => history.push(`/plants/detail/${plant.id}`))        
+            .then(() => history.push(`/plants/detail/${plantId}`))        
         } else {
             addNote({
                 id: note.id,
-                plantId: plantId,
+                plantId: parseInt(plantId),
                 text: note.text,
-                date: note.date
+                date: noteDate
             })
-            .then(() => history.push(`/plants/detail/${plant.id}`))
+            .then(() => history.push(`/plants/detail/${plantId}`))
         }    
     }
 return(
@@ -57,10 +59,10 @@ return(
                 <input type="textarea" id="text" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Note details" value={note.text}/>
             </div>
         </fieldset>
-
-
-
-
+        <button className="btn btn-primary"
+        
+          onClick={handleClickSaveNote}>
+        {noteId ? "Save Changes" : "New Note"}</button>
     </form>
 )
 

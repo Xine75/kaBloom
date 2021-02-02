@@ -33,8 +33,8 @@ const getPlantById = (id) => {
     .then(res => res.json())
 }
 //Uh oh! Delete a plant
-const deletePlant = plant => {
-    return fetch(`http://localhost:8080/plants/${plant.id}`, {
+const deletePlant = plantId => {
+    return fetch(`http://localhost:8080/plants/${plantId}`, {
         method: "DELETE"
     })
     .then(getPlants)

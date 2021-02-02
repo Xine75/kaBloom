@@ -11,7 +11,7 @@ export const NoteCard = ({note}) => {
 
     const { deleteNote, getNotes } = useContext(NoteContext)
 
-    const handleDelete = (note) => {
+    const handleDelete = () => {
         deleteNote(note.id)
         .then(getNotes)
     }
