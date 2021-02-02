@@ -33,7 +33,7 @@ export const PlantDetail =()=> {
           <div className="plant__light">Light needs: {plant.light}</div>
           <div className="plant__water">Fertilize? {plant.fertilize}</div>
           <button onClick={handleDelete}>Delete Plant</button>
-          <button onClick={() => { history.push("/") }}>
+          <button onClick={() => { history.push("/plants") }}>
                     Done
                 </button>
 
