@@ -11,7 +11,7 @@ import "./Plant.css"
 export const PlantForm = () => {
     const { addPlant } = useContext(PlantContext)
     const history = useHistory()
-    const currentUser = parseInt(localStorage.getItem("kabloom_user"))
+    const currentUser = parseInt(sessionStorage.getItem("kabloom_user"))
     const [imageURL, setImageURL ] = useState("")
 
     const [plant, setPlant] = useState({

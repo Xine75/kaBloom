@@ -17,6 +17,12 @@ export const ApplicationViews = () => {
             {/* Render the Plant List list when http://localhost:3000/ */}
             <PlantProvider>
                 <Route exact path="/">
+                    <Home />
+                </Route>
+            </PlantProvider>
+
+            <PlantProvider>
+                <Route exact path="/plants">
                     <PlantList />
                 </Route>
             </PlantProvider>

@@ -22,8 +22,8 @@ export const Login = props => {
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    localStorage.setItem("kabloom_user", exists.id)
-                    history.push("/")
+                    sessionStorage.setItem("kabloom_user", exists.id)
+                    history.push("/plants")
                 } else {
                     existDialog.current.showModal()
                 }

@@ -11,7 +11,7 @@ import "./Plant.css"
 
 export const PlantList = () => {
     const { plants, getPlants } = useContext(PlantContext)
-    const currentUser = parseInt(localStorage.getItem("kabloom_user"))
+    const currentUser = parseInt(sessionStorage.getItem("kabloom_user"))
     const history = useHistory()
 
     useEffect(() => {
