@@ -34,9 +34,9 @@ export const ApplicationViews = () => {
                         <PlantDetail />
                     </Route>
 
-                    <Route exact path="/plants/detail/:plantId(\d+)">
+                    {/* <Route exact path="/plants/detail/:plantId(\d+)">
                         <NoteList />
-                    </Route>
+                    </Route> */}
 
                     <Route exact path="/plant/create">
                         <PlantForm />
