@@ -11,16 +11,18 @@ export const NoteCard = ({note}) => {
 
     const { deleteNote, getNotes } = useContext(NoteContext)
 
+//----------------- DELETE NOTE FUNCTION ------------------------
+
     const handleDelete = () => {
         deleteNote(note.id)
         .then(getNotes)
     }
-
+//----------------JSX FOR NOTE CARD --------------------------
     return (
         <section className="note" id={note.id}>
             <div className="note__date">{note.date}</div>
             <div className="note__text">{note.text}</div>
-            <button onClick={handleDelete}>Delete</button>
+            <button onClick={handleDelete}>Delete Note</button>
         </section>
 
 

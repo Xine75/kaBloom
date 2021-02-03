@@ -1,20 +1,21 @@
-import React, { useState, useContext } from "react";
-import { useHistory } from 'react-router-dom';
+import React, { useState, useContext, useEffect } from "react";
+import { useHistory, useParams } from 'react-router-dom';
 import { PlantContext } from "./PlantProvider"
 import "./Plant.css"
 
 //PlantForm defines a function called PlantForm that:
-//1. Allows user to create and save a new plant
+//1. Allows user to create, save and edit a new plant
 //2. Utilizes Cloudinary to upload and save image of plant
 
-//------------------ SETTING STATE --------------------------
 export const PlantForm = () => {
-    const { addPlant } = useContext(PlantContext)
+    const { addPlant, updatePlant, getPlantById } = useContext(PlantContext)
     const history = useHistory()
     const currentUser = parseInt(sessionStorage.getItem("kabloom_user"))
+    const {plantId} = useParams();
+
+//------------------ SETTING STATE --------------------------
+
     const [imageURL, setImageURL ] = useState("")
-
-
     const [plant, setPlant] = useState({
         userId: currentUser,
         type: "",
@@ -27,7 +28,9 @@ export const PlantForm = () => {
         imageURL: ""
     })
 
-    //--------------IMAGE UPLOAD HANDLING --------------------
+    const [isLoading, setIsLoading] = useState(true);
+
+//--------------------IMAGE UPLOAD HANDLING --------------------
     const [loading, setLoading] = useState(false)
     
     const uploadImage = async e => {
@@ -49,7 +52,7 @@ export const PlantForm = () => {
         setImageURL(file.secure_url)
         setLoading(false)
     }
-        //---------------- SAVING USER INPUT-----------------
+ //---------------------- SAVING USER INPUT----------------------
 
     const handleControlledInputChange = (e) => {
         const newPlant = { ...plant }
@@ -57,18 +60,49 @@ export const PlantForm = () => {
         
         setPlant(newPlant)
     }
-        //---------------- SAVING NEW PLANT UPON CLICK EVENT ----------------
+        //---------------- SAVING NEW OR EDITED PLANT UPON CLICK EVENT ----------------
     const handleClickSavePlant = (e) => {
         e.preventDefault()
-        const newPlant = { ...plant, imageURL }
-        addPlant(newPlant)
-            .then(() => history.push("/plants"))
+        setIsLoading(true)
+        if (plantId){
+            updatePlant({
+                id: plant.id,
+                userId: currentUser,
+                type: plant.type,
+                name: plant.name,
+                dateAdopted: plant.dateAdopted,
+                water: plant.water,
+                light: plant.light,
+                fertilize: plant.fertilize,
+                lastWatered: plant.lastWatered,
+                imageURL: plant.imageURL
+            })
+            .then(() => history.push(`plants/detail/${plant.id}`))
+        } else {
+            const newPlant = { ...plant, imageURL }
+            addPlant(newPlant)
+                .then(() => history.push("/plants"))
+        }
     }
 
-        //---------------- THE ADD NEW PLANT FORM --------------------------
+//--------------------GET PLANT BY ID ------------------------------
+
+    useEffect(() => {
+          if (plantId){
+            getPlantById(plantId)
+            .then(plant => {
+                setPlant(plant)
+                setIsLoading(false)
+            })
+          } else {
+            setIsLoading(false)
+          }
+      }, [])
+
+//---------------------- THE ADD / EDIT PLANT FORM --------------------------
     return (
         <form className="plantForm">
-            <h2>Newly Adopted Plant</h2>
+            <h2 className="plantForm__title">{plantId ? <> Edit Plant </> : <>Newly Adopted Plant</>}</h2>
 
             <div className="image">
                 <div>Upload Image</div>
@@ -141,9 +175,8 @@ export const PlantForm = () => {
                     <input type="date" id="lastWatered" onChange={handleControlledInputChange} required className="form-control"  value={plant.lastWatered} />
                 </div>
             </fieldset>
-            <button className="btn btn-primary" onClick={handleClickSavePlant}>Save</button>
+            <button className="btn btn-primary" disabled={isLoading} onClick={handleClickSavePlant}>{plantId ? <>Save Changes</> : <>Add Plant</>}</button>
         </form>
     )
 }
-//<input type="text" id="fertilize" onChange={handleControlledInputChange} required className="form-control" placeholder="Feed me" value={plant.fertilize} />
 

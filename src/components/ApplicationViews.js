@@ -42,6 +42,10 @@ export const ApplicationViews = () => {
                         <PlantForm />
                     </Route>
 
+                    <Route exact path="/plants/edit/${plant.id}">
+                        <PlantForm />
+                    </Route>
+
                     <Route exact path="/note/create/:plantId(\d+)">
                         <NoteForm />
                     </Route>
