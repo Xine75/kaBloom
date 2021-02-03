@@ -15,6 +15,7 @@ export const PlantForm = () => {
 
 //------------------ SETTING STATE --------------------------
 
+    const [isLoading, setIsLoading] = useState(true);
     const [imageURL, setImageURL ] = useState("")
     const [plant, setPlant] = useState({
         userId: currentUser,
@@ -27,8 +28,6 @@ export const PlantForm = () => {
         lastWatered: "",
         imageURL: ""
     })
-
-    const [isLoading, setIsLoading] = useState(true);
 
 //--------------------IMAGE UPLOAD HANDLING --------------------
     const [loading, setLoading] = useState(false)
@@ -57,7 +56,6 @@ export const PlantForm = () => {
     const handleControlledInputChange = (e) => {
         const newPlant = { ...plant }
         newPlant[e.target.id] = e.target.value
-        
         setPlant(newPlant)
     }
         //---------------- SAVING NEW OR EDITED PLANT UPON CLICK EVENT ----------------
@@ -77,7 +75,7 @@ export const PlantForm = () => {
                 lastWatered: plant.lastWatered,
                 imageURL: plant.imageURL
             })
-            .then(() => history.push(`plants/detail/${plant.id}`))
+            .then(() => history.push(`/plants/detail/${plantId}`))
         } else {
             const newPlant = { ...plant, imageURL }
             addPlant(newPlant)

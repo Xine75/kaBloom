@@ -33,6 +33,11 @@ export const NoteProvider = (props) => {
         })
         .then(getNotes)
     }
+//Get details of a particular note
+const getNoteById = (id) => {
+    return fetch(`http://localhost:8080/notes/${id}?`)
+    .then(res => res.json())
+}
     //Oops I spelled that wrong - edit note!
     const updateNote = note => {
         return fetch(`http://localhost:8080/notes/${note.id}`, {
@@ -49,7 +54,7 @@ export const NoteProvider = (props) => {
     //Allow exposure to data via Context.Provider
     return (
         <NoteContext.Provider value={{
-            notes, getNotes, addNote, deleteNote, updateNote
+            notes, getNotes, addNote, deleteNote, updateNote, getNoteById
         }}>
             {props.children}
         </NoteContext.Provider>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { PlantContext } from "./PlantProvider"
+import { NoteList } from "../note/NoteList"
 import "./Plant.css"
 
 export const PlantDetail =()=> {
@@ -30,6 +31,7 @@ export const PlantDetail =()=> {
 //---------------------- JSX FOR PLANT DETAILS -----------------------------
 
     return (
+        <>
         <section className="plant">
             <img src={plant.imageURL} className="plant__image"/>
           <h3 className="plant__name">{plant.name}</h3>
@@ -39,13 +41,14 @@ export const PlantDetail =()=> {
           <div className="plant__light">Light needs: {plant.light}</div>
           <div className="plant__water">Fertilize? {plant.fertilize}</div>
 
-          <button onClick={() => {history.push(`/plants/edit/${plant.id}`)}}>Edit</button>
+          <button onClick={() => {history.push(`/plants/edit/${plantId}`)}}>Edit</button>
           <button onClick={handleDelete}>Delete Plant</button>
           <button onClick={() => { history.push("/plants") }}>Done</button>
 
         </section>
+
+        <NoteList />
+        </>
       )
 }
 
-// plant.lastWatered = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp)
-// plant.dateAdopted = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp)
