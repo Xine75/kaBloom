@@ -14,14 +14,17 @@ export const PlantList = () => {
     const currentUser = parseInt(sessionStorage.getItem("kabloom_user"))
     const history = useHistory()
 
+//--------------REACH OUT AND GET THOSE PLANTS---------------------
+
     useEffect(() => {
         getPlants()
     }, [])
 
+//----------------FILTER plants FOR those belonging to current user, then feed each object in the array into PlantCard
+
     return (
         <>
             <div className="plants">
-                {/*map over plants and grab only those belonging to current user, then feed each object in the array into PlantCard*/}
                 {
                     plants.filter(p => p.userId === currentUser).map(plant => {
                         
