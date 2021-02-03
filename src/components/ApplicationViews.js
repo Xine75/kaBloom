@@ -34,10 +34,6 @@ export const ApplicationViews = () => {
                         <PlantDetail />
                     </Route>
 
-                    {/* <Route exact path="/plants/detail/:plantId(\d+)">
-                        <NoteList />
-                    </Route> */}
-
                     <Route exact path="/plant/create">
                         <PlantForm />
                     </Route>
@@ -50,10 +46,7 @@ export const ApplicationViews = () => {
                         <NoteForm />
                     </Route>
 
-                    <Route exact path="/notes/edit/:noteId(\d+)">
-                        <NoteForm />
-                    </Route>
-
+     
                 </PlantProvider>
             </NoteProvider>
 

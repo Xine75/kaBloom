@@ -25,7 +25,6 @@ export const NoteCard = ({note}) => {
             <div className="note__date">{note.date}</div>
             <div className="note__text">{note.text}</div>
 
-            <button onClick={() => {history.push(`/notes/edit/${note.id}`)}}>Edit</button>
             <button onClick={handleDelete}>Delete Note</button>
         </section>
 
