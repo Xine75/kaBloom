@@ -6,7 +6,7 @@ import "./Plant.css"
 //1. Rendering name, type, image and last-watered date of users's plants to the DOM
 //2. Rendering a "Watered Today" button that will update "lastWatered" prop on plant
 //3. "Last Watered" text field will update to DOM
-//4. Rendering a "More" button that will take user to notes for a specific plant
+//4. Rendering a link on plant's name that will take user to details and notes for a specific plant
 
 export const PlantCard = ({ plant }) => {
 
@@ -14,6 +14,7 @@ export const PlantCard = ({ plant }) => {
     const history = useHistory()
     const timestamp = Date.now()
 
+    ///------------ I WATERED TODAYY BABYY -----------------------
 
     const UpdateLastWatered = () => {
         const updatedPlant = { ...plant }
@@ -21,8 +22,9 @@ export const PlantCard = ({ plant }) => {
         updatePlant(updatedPlant)
         .then(getPlants)
     }
-    return (
 
+  //------------------JSX FOR PLANT CARD ----------------------------------
+    return (
     <section className="plant">
         <img src={plant.imageURL} className="plant__image"/>
         <h3 className="plant__name">

@@ -5,22 +5,26 @@ import { NoteCard } from "./NoteCard"
 import "./Note.css"
 
 //Create and export NoteList, which will be responsible for:
-//1. Rendering notes for user's selected plant to Plant Detail view
+//1. Rendering notes for user's selected plant 
+//2. Allow user to add a note
 
 export const NoteList = () => {
     const { notes, getNotes } = useContext(NoteContext)
     const history = useHistory()
     const { plantId } = useParams()
+
+//--------------Reach out and get those Notes--------------------------
    
      useEffect(() => {
         getNotes()
     }, [])
 
+//---------------Filter notes for those whose note.plantId matches the current detail/plantId, then feed each object in the array into NoteCard*/}
+
     return (
         <>
             <div className="notes">
                 <h3 className="notes__header">Notes:</h3>
-                {/*map over notes and grab only those whose note.plantId matches the current detail/plantId, then feed each object in the array into NoteCard*/}
                 {
                     notes.filter(note => note.plantId === parseInt(plantId)).map(note => {
 

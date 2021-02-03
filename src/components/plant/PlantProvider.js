@@ -9,14 +9,14 @@ export const PlantProvider = (props) => {
 //Set a value that will mutate (plants) and the function that will update it (setPlants())
     const [plants, setPlants] = useState([])
 
-//Get plants from the API
+//-------------------GET THOSE PLANTS BABY---------------------
     const getPlants = () => {
         return fetch("http://localhost:8080/plants?_embed=notes")
         .then(res => res.json())
         .then(setPlants)
     }
 
-//Add plants to the API
+//--------------KABLOOM GOT A NEW PLANT BABY------------------------
     const addPlant = plantObj => {
         return fetch("http://localhost:8080/plants", {
             method: "POST",
@@ -27,19 +27,21 @@ export const PlantProvider = (props) => {
         })
         .then(getPlants)
     }
-//Get details of a particular plant
+//-------------WHICH PLANT?? DON'T SAY "THE ONE WITH LEAVES"------------------
+
 const getPlantById = (id) => {
     return fetch(`http://localhost:8080/plants/${id}?_embed=notes`)
     .then(res => res.json())
 }
-//Uh oh! Delete a plant
+//-----------------------Uh oh! Delete a plant------------------------------
+
 const deletePlant = plantId => {
     return fetch(`http://localhost:8080/plants/${plantId}`, {
         method: "DELETE"
     })
     .then(getPlants)
 }
-//Let's water today or make another change!
+//----------------Let's water today or make another change!-----------------------------
 const updatePlant = plant => {
     return fetch(`http://localhost:8080/plants/${plant.id}`, {
         method: "PUT",
@@ -50,7 +52,7 @@ const updatePlant = plant => {
     })
     .then(getPlants)
 }
-//Allow exposure to data via Context.Provider
+//--------------LET'S GOOOOOOOOOO BABY!------Allow exposure to data via Context.Provider-------------
 return (
     <PlantContext.Provider value={{
         plants, getPlants, addPlant, getPlantById, deletePlant, updatePlant
