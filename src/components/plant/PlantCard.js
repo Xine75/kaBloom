@@ -31,7 +31,7 @@ export const PlantCard = ({ plant }) => {
           </Link>
         </h3>
         <div className="plant_type">{plant.type}</div>
-        <div className="plant_lastWatered">Last watered: {plant.lastWatered}</div>
+        <div className="plant_lastWatered">Last watered: {new Date(plant.lastWatered).toLocaleDateString()}</div>
         <button className="plant__wateredToday" id={plant.id} onClick={UpdateLastWatered}>
           Watered Today!
       </button>
