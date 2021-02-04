@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Link } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationViews";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
@@ -12,7 +12,7 @@ export const Kabloom = () => (
         if (sessionStorage.getItem("kabloom_user")) {
           return (
             <>
-              <div className="heading">kaBloom</div>
+              <Link to={"/plants"} className="heading">kaBloom</Link>
               <ApplicationViews />
             </>
           );
@@ -30,3 +30,7 @@ export const Kabloom = () => (
     </Route>
   </>
 );
+
+{/* <Link to={`/plants/detail/${plant.id}`}style={{ color: "#028A0F" }}>
+{ plant.name }
+</Link> */}

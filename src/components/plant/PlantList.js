@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import { PlantContext } from "./PlantProvider"
 import { PlantCard } from "./PlantCard"
+import Button from "react-bootstrap/Button"
 import "./Plant.css"
 
 //Create and export PlantList, which will be responsible for:
@@ -31,9 +32,9 @@ export const PlantList = () => {
                         return <PlantCard key={plant.id} plant={plant}/>
                     })
                 }
-       <button onClick={() => {history.push("/plant/create")}}>
+       <Button className="newPlant" variant="success" size="lg" style={{ width: '20rem'  }} onClick={() => {history.push("/plant/create")}}>
           kaBloom! I got a new plant!
-      </button>           
+      </Button>           
             </div>
         </>
     )
