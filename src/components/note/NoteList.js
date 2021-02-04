@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { useHistory, useParams } from "react-router-dom"
 import { NoteContext } from "./NoteProvider"
 import { NoteCard } from "./NoteCard"
+import Button from "react-bootstrap/Button"
 import "./Note.css"
 
 //Create and export NoteList, which will be responsible for:
@@ -24,16 +25,16 @@ export const NoteList = () => {
     return (
         <>
             <div className="notes">
-                <h3 className="notes__header">Notes:</h3>
+                <h4 className="notes__header">Notes</h4>
                 {
                     notes.filter(note => note.plantId === parseInt(plantId)).map(note => {
 
                         return <NoteCard key={note.id} note={note} />
                     })
                 }
-                <button onClick={() => { history.push(`/note/create/${plantId}`) }}>
+                <Button size="sm" onClick={() => { history.push(`/note/create/${plantId}`) }}>
                     Add a Note
-                </button>
+                </Button>
             </div>
         </>
     )

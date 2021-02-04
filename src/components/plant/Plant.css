@@ -1,3 +1,13 @@
 .plants {
-    overflow: auto
+    overflow: auto;
+    justify-content: center
+}
+.plant{
+    justify-content: center;
+}
+
+/* this is doing noting - figure it out */
+.plant__wateredToday {
+    align-self: flex-end;
+  
 }

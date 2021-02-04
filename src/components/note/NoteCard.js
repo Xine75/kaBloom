@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { NoteContext } from "./NoteProvider"
+import Button from "react-bootstrap/Button"
 import "./Note.css"
 
 //NoteCard creates a function called NoteCard which:
@@ -25,7 +26,7 @@ export const NoteCard = ({note}) => {
             <div className="note__date">{note.date}</div>
             <div className="note__text">{note.text}</div>
 
-            <button onClick={handleDelete}>Delete Note</button>
+            <Button variant="outline-danger" size="sm" onClick={handleDelete}>Delete Note</Button>
         </section>
 
 
