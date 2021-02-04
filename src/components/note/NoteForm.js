@@ -7,7 +7,7 @@ import "./Note.css"
 //or Delete a note
 
 export const NoteForm = () => {
-    const { addNote, getNoteById } = useContext(NoteContext)
+    const { addNote } = useContext(NoteContext)
     const history = useHistory()
     const { plantId } = useParams()
     const { noteId } = useParams()
