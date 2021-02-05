@@ -43,7 +43,7 @@ export const PlantDetail =()=> {
           <div className="plant__water">Fertilize? {plant.fertilize}</div>
 
           <Button variant="outline-success" size="sm" onClick={() => {history.push(`/plants/edit/${plantId}`)}}>Edit</Button>
-          <button variant="outline-danger" size="sm" onClick={handleDelete}>Delete Plant</button>
+          <Button variant="outline-danger" size="sm" onClick={handleDelete}>Delete Plant</Button>
           <Button variant="outline-secondary" size="sm" onClick={() => { history.push("/plants") }}>Done</Button>
         </section>
 

@@ -43,7 +43,7 @@ export const NoteForm = () => {
 
     }
 
-    //------------------GET NOTE BY ID------[prob unneeded but let's not be hasty]-------------------
+    //------------------GET NOTE BY ID-------------------------
     useEffect(() => {
         if (noteId) {
             getNoteById(noteId)

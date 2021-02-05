@@ -37,7 +37,7 @@ export const NoteProvider = (props) => {
         })
         .then(getNotes)
     }
-//--------------------Get details of a particular note--[I don't think I need this but let's not be hasty]-------------------------------
+//--------------------Get details of a particular note---------------------------------
 
 const getNoteById = (id) => {
     return fetch(`http://localhost:8080/notes/${id}?`)
