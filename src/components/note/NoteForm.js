@@ -7,7 +7,7 @@ import "./Note.css"
 //or Delete a note
 
 export const NoteForm = () => {
-    const { addNote } = useContext(NoteContext)
+    const { addNote, getNoteById } = useContext(NoteContext)
     const history = useHistory()
     const { plantId } = useParams()
     const { noteId } = useParams()
@@ -43,14 +43,14 @@ export const NoteForm = () => {
 
     }
 
-    //------------------GET NOTE BY ID------[prob unneeded but let's not be hasty]-------------------
+    //------------------GET NOTE BY ID-------------------------
     useEffect(() => {
         if (noteId) {
-            // getNoteById(noteId)
-            //     .then(note => {
+            getNoteById(noteId)
+                .then(note => {
                     setNote(note)
                     setIsLoading(false)
-                // })
+                })
         } else {
             setIsLoading(false)
         }

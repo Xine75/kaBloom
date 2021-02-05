@@ -47,7 +47,7 @@ export const PlantCard = ({ plant }) => {
 
             <Button className="plant__wateredToday" variant="primary" size="sm" id={plant.id} onClick={UpdateLastWatered}>
               Watered Today!
-      </Button>{' '}
+      </Button>
 
           </Col>
           </Row>

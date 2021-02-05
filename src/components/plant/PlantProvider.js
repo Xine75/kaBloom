@@ -36,14 +36,14 @@ const getPlantById = (id) => {
 //-----------------------Uh oh! Delete a plant------------------------------
 
 const deletePlant = plantId => {
-    return fetch(`http://localhost:8080/plants/${plantId}`, {
+    return fetch(`http://localhost:8080/plants/${plantId}?_embed=notes`, {
         method: "DELETE"
     })
     .then(getPlants)
 }
 //----------------Let's water today or make another change!-----------------------------
 const updatePlant = plant => {
-    return fetch(`http://localhost:8080/plants/${plant.id}`, {
+    return fetch(`http://localhost:8080/plants/${plant.id}?_embed=notes`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
