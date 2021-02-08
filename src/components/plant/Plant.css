@@ -1,8 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
 
-
-
 .plants {
     overflow: auto;
     justify-content: center;
@@ -11,6 +9,7 @@
 .plant{
     margin-left: 2rem
 }
+
 .newPlant{
     margin-left: 2rem
 }
@@ -21,20 +20,27 @@
 }
 .plant__name {
     color: #028A0f;
-}
-.plant__type {
-    /* color: #234f1e; */
     font-family: Caveat;
-    font-size: 20px
+    font-size: 30px;
+    margin-top: 1rem; 
 }
-.plant__detail__type{
+
+.plant__detail__name {
+    color: #028A0f;
     font-family: Caveat;
-    font-size: 30px
+    font-size: 40px
+}
+.plant__wateredToday__btn {
+    margin-top: 1rem;
 }
 
 .plant__edit__btn {
     margin-right: 1rem
 }
 .plant__delete__btn {
-    margin-right: 4rem
+    margin-left: 7rem
 }
+.plant__done__btn {
+    margin-left: 8rem;
+}
+

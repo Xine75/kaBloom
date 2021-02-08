@@ -29,13 +29,13 @@ export const PlantCard = ({ plant }) => {
   //------------------JSX FOR PLANT CARD ----------------------------------
   return (
     <>
-    <Card className="plant" border="success" style={{ width: '20rem' }}>
+    <Card className="plant" border="success">
       <Card.Body>
 
         <Row className="row__top">
+
           <Col className="plant__left">
             <Card.Img src={plant.imageURL} className="plant__card__image" />
-            
           </Col>
 
           <Col className="plant__right">
@@ -46,12 +46,13 @@ export const PlantCard = ({ plant }) => {
             </Card.Title>
             <div className="plant__type">{plant.type}</div>
           </Col>
+
         </Row>
 
 
         <Row className="row__bottom">
-          <Col><div className="plant_lastWatered">Last watered: {new Date(plant.lastWatered).toLocaleDateString()}</div></Col>
-          <Col><Button className="plant__wateredToday" variant="primary" size="sm" id={plant.id} onClick={UpdateLastWatered}>
+          <Col><div className="plant_lastWatered">Last watered: <b>{new Date(plant.lastWatered).toLocaleDateString()}</b></div></Col>
+          <Col><Button className="plant__wateredToday__btn" variant="primary" size="sm" id={plant.id} onClick={UpdateLastWatered}>
             Watered Today!
       </Button>
           </Col>

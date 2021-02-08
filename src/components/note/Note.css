@@ -1,8 +1,28 @@
+.notes{
+    display: flex;
+    flex: wrap;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 25rem;
+    
+}
+
+
 .note{
-    margin-left: 2rem
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    width: 10rem;
+    height: 10rem;
+    overflow: scroll;
+    
+
 }
 .notes__header {
     margin-left: 2rem
+}
+
+.note__text{
+    overflow: scroll;
 }
 .notes__btn {
     margin-left: 2rem

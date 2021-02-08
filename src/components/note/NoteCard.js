@@ -2,6 +2,9 @@ import React, { useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { NoteContext } from "./NoteProvider"
 import Button from "react-bootstrap/Button"
+import Card from "react-bootstrap/Card"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 import "./Note.css"
 
 //NoteCard creates a function called NoteCard which:
@@ -22,14 +25,16 @@ export const NoteCard = ({note}) => {
     }
 //----------------JSX FOR NOTE CARD --------------------------
     return (
-        <section className="note" id={note.id}>
-            <div className="note__date">{note.date}</div>
+        <>
+        <Card className="note" border="secondary" style={{ width: '2 rem'}} id={note.id}>
+        <Card.Header className="note__date">{note.date}</Card.Header>
+
+            <Card.Body className="note__text">
             <div className="note__text">{note.text}</div>
-
-            <Button variant="outline-danger" size="sm" onClick={handleDelete}>Delete Note</Button>
-        </section>
-
-
+            </Card.Body>
+            <Button variant="link" size="sm" onClick={handleDelete}>Delete</Button>
+        </Card>
+        </>
     )
 
 }
