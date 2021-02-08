@@ -34,17 +34,17 @@ export const PlantCard = ({ plant }) => {
 
         <Row className="row__top">
           <Col className="plant__left">
-            <Card.Img src={plant.imageURL} className="plant__image" />
+            <Card.Img src={plant.imageURL} className="plant__card__image" />
             
           </Col>
 
           <Col className="plant__right">
             <Card.Title className="plant__name" >
-              <Link to={`/plants/detail/${plant.id}`} style={{ color: "#028" }}>
+              <Link to={`/plants/detail/${plant.id}`} style={{ color: "#028a0f" }}>
                 {plant.name}
               </Link>
             </Card.Title>
-            <div className="plant_type">{plant.type}</div>
+            <div className="plant__type">{plant.type}</div>
           </Col>
         </Row>
 
