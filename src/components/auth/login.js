@@ -32,6 +32,7 @@ export const Login = props => {
     }
 
     return (
+        <>
         <main className="container--login">
             <dialog className="dialog dialog--auth" ref={existDialog}>
                 <div>User does not exist</div>
@@ -50,8 +51,9 @@ export const Login = props => {
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>
+                    <br/>
                     <fieldset>
-                        <Button type="submit">
+                        <Button className="login__btn"type="submit">
                             Sign in
                         </Button>
                     </fieldset>
@@ -61,5 +63,6 @@ export const Login = props => {
                 <Link to="/register">Not a member yet?</Link>
             </section>
         </main>
+        </>
     )
 }

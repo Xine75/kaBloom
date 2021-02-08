@@ -29,7 +29,7 @@ export const PlantCard = ({ plant }) => {
   //------------------JSX FOR PLANT CARD ----------------------------------
   return (
     <>
-    <Card className="plant" border="success">
+    <Card className="plant__card" border="success">
       <Card.Body>
 
         <Row className="row__top">
