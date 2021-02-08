@@ -19,7 +19,8 @@ export const NoteForm = () => {
     const [note, setNote] = useState({
         plantId: 0,
         date: "",
-        text: ""
+        text: "",
+        title: ""
 
     })
     //---------------- SAVING USER INPUT-----------------
@@ -37,7 +38,8 @@ export const NoteForm = () => {
         addNote({
             plantId: parseInt(plantId),
             text: note.text,
-            date: noteDate
+            date: noteDate,
+            title: note.title
         })
             .then(() => history.push(`/plants/detail/${plantId}`))
 
@@ -60,6 +62,12 @@ export const NoteForm = () => {
     return (
         <form className="noteForm">
             <h2 className="noteForm__title">Add a Note</h2>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="text">Title</label>
+                    <input type="text" id="title" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Note details" value={note.title} />
+                </div>
+            </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="text">What's going on?</label>

@@ -31,6 +31,3 @@ export const Kabloom = () => (
   </>
 );
 
-{/* <Link to={`/plants/detail/${plant.id}`}style={{ color: "#028A0F" }}>
-{ plant.name }
-</Link> */}
