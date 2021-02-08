@@ -1,6 +1,7 @@
 .plants {
     overflow: auto;
-    justify-content: center
+    justify-content: center;
+    margin-left: 2rem
 }
 .plant{
     justify-content: center;
