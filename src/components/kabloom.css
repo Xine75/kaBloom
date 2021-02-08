@@ -1,8 +1,9 @@
 .heading {
-    flex-grow: 1;
+    display: flex;
+    align-content: center;
     color: #028A0f;
-   text-align: center;
+  
 }
-.body{
+/* .body{
     height: 10px
-}
+} */
