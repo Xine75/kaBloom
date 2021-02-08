@@ -1,17 +1,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
 
+/* ------------Plant List---------------- */
 .plants {
     overflow: auto;
-    justify-content: center;
-    margin-left: 2rem
+    margin-left: 2rem;
+    height: 45rem;
+    overflow: scroll;
 }
 .plant{
-    margin-left: 2rem
+    margin-left: 2rem;
+ 
 }
 
-.newPlant{
-    margin-left: 2rem
+.new__plant__btn{
+    margin-left: 5rem;
+    margin-top: 2rem;
 }
 
 .plant__image {
@@ -24,6 +28,8 @@
     font-size: 30px;
     margin-top: 1rem; 
 }
+
+/* ------------Plant Detail---------------- */
 
 .plant__detail__name {
     color: #028A0f;
@@ -42,5 +48,20 @@
 }
 .plant__done__btn {
     margin-left: 8rem;
+}
+
+/* ------------Plant Form---------------- */
+
+.plantForm {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    
+}
+#dateAdopted{
+    width: 10rem;
+
+}
+#lastWatered{
+    width: 10rem;
 }
 

@@ -1,9 +1,9 @@
 .heading {
     display: flex;
-    align-content: center;
     color: #028A0f;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-left: 5rem;
 
   
 }

@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useHistory, useParams } from 'react-router-dom';
 import { PlantContext } from "./PlantProvider"
+import Button from "react-bootstrap/Button"
 import "./Plant.css"
 
 //PlantForm defines a function called PlantForm that:
@@ -99,8 +100,9 @@ export const PlantForm = () => {
 
 //---------------------- THE ADD / EDIT PLANT FORM --------------------------
     return (
+        <>
         <form className="plantForm">
-            <h2 className="plantForm__title">{plantId ? <> Edit Plant </> : <>Newly Adopted Plant</>}</h2>
+            <h3 className="plantForm__title">{plantId ? <> Edit Plant </> : <>Newly Adopted Plant</>}</h3>
 
             <div className="image">
                 <div>Upload Image</div>
@@ -111,6 +113,7 @@ export const PlantForm = () => {
                         <img src={imageURL} style={{ width: "100px" }} />
                     )}
             </div>
+            <br/>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Plant name:</label>
@@ -173,8 +176,11 @@ export const PlantForm = () => {
                     <input type="date" id="lastWatered" onChange={handleControlledInputChange} required className="form-control"  value={plant.lastWatered} />
                 </div>
             </fieldset>
-            <button className="btn btn-primary" disabled={isLoading} onClick={handleClickSavePlant}>{plantId ? <>Save Changes</> : <>Add Plant</>}</button>
+            <button className="btn btn-info" disabled={isLoading} onClick={handleClickSavePlant}>{plantId ? <>Save Changes</> : <>Add Plant</>}</button>
+            <Button className="btn" variant="link" disabled={isLoading} onClick={() => {history.push("/plants")}}>Cancel</Button>
+
         </form>
+        </>
     )
 }
 

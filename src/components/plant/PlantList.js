@@ -32,10 +32,11 @@ export const PlantList = () => {
                         return <PlantCard key={plant.id} plant={plant}/>
                     })
                 }
-       <Button className="newPlant" variant="success" size="lg" style={{ width: '20rem'  }} onClick={() => {history.push("/plant/create")}}>
+                </div>
+       <Button className="new__plant__btn" variant="success" size="lg" style={{ width: '20rem'  }} onClick={() => {history.push("/plant/create")}}>
           kaBloom! I got a new plant!
       </Button>           
-            </div>
+        
         </>
     )
 }

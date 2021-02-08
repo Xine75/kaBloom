@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import { useHistory, useParams } from "react-router-dom"
 import { NoteContext } from "./NoteProvider"
+import Button from "react-bootstrap/Button"
 import "./Note.css"
 
 //NoteForm defines a function called NoteForm that allows user to add new note
@@ -55,17 +56,19 @@ export const NoteForm = () => {
         }
     }, [])
 
-    //--------------- THE ADD NOTE FORM --------------------
+    //--------------- JSX FOR ADD NOTE FORM --------------------
     return (
         <form className="noteForm">
-            <h2 className="noteForm__title">Add a Note</h2>
-            <fieldset>
+            <h3 className="noteForm__title">Add a Note</h3>
+            <fieldset className="noteForm__input">
                 <div className="form-group">
                     <label htmlFor="text">What's going on?</label>
-                    <input type="textarea" id="text" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Note details" value={note.text} />
+                    <textarea id="text" onChange={handleControlledInputChange} required autoFocus className="form-control__note" placeholder="Note details" value={note.text} />
                 </div>
             </fieldset>
-            <button className="btn btn-primary" disabled={isLoading} onClick={handleClickSaveNote}>Save Note</button>
+            <Button className="btn btn-info" disabled={isLoading} onClick={handleClickSaveNote}>Save Note</Button>
+            <Button className="btn" variant="link" disabled={isLoading} onClick={() => {history.push(`/plants/detail/${plantId}`)}}>Cancel</Button>
+
         </form>
     )
 }
