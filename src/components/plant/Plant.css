@@ -1,14 +1,40 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+
+
+
 .plants {
     overflow: auto;
     justify-content: center;
     margin-left: 2rem
 }
 .plant{
-    justify-content: center;
+    margin-left: 2rem
+}
+.newPlant{
+    margin-left: 2rem
 }
 
-/* this is doing noting - figure it out */
-.plant__wateredToday {
-    align-self: flex-end;
+.plant__image {
+    margin-left: 1rem
   
+}
+.plant__name {
+    color: #028A0f;
+}
+.plant__type {
+    /* color: #234f1e; */
+    font-family: Caveat;
+    font-size: 20px
+}
+.plant__detail__type{
+    font-family: Caveat;
+    font-size: 30px
+}
+
+.plant__edit__btn {
+    margin-right: 1rem
+}
+.plant__delete__btn {
+    margin-right: 4rem
 }

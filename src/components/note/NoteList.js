@@ -25,14 +25,14 @@ export const NoteList = () => {
     return (
         <>
             <div className="notes">
-                <h4 className="notes__header">Notes</h4>
+            <h4 className="notes__header">Notes</h4>
                 {
                     notes.filter(note => note.plantId === parseInt(plantId)).map(note => {
 
                         return <NoteCard key={note.id} note={note} />
                     })
                 }
-                <Button size="sm" onClick={() => { history.push(`/note/create/${plantId}`) }}>
+                <Button className="notes__btn" size="sm" onClick={() => { history.push(`/note/create/${plantId}`) }}>
                     Add a Note
                 </Button>
             </div>
