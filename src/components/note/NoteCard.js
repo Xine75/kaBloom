@@ -24,6 +24,7 @@ export const NoteCard = ({note}) => {
     return (
         <section className="note" id={note.id}>
             <div className="note__date">{note.date}</div>
+            <div className="note__title">{note.title}</div>
             <div className="note__text">{note.text}</div>
 
             <Button variant="outline-danger" size="sm" onClick={handleDelete}>Delete Note</Button>
