@@ -17,10 +17,10 @@ export const Kabloom = () => (
             <>
 
             <Row></Row>
-            <Row>
-              <Col></Col>
-              <Col><Link to={"/plants"} className="heading">kaBloom</Link></Col>
-              <Col></Col>
+            <Row className="iconic__kabloom">
+              <Col className="logo__left"></Col>
+              <Col className="heading__center"><i className="leaf__left fab fa-pagelines"></i>  <Link to={"/plants"} className="heading">kaBloom</Link>  <i className="leaf__right fab fa-pagelines"></i></Col>
+              <Col className="logo__right"></Col>
               </Row>
               <Row></Row>
              

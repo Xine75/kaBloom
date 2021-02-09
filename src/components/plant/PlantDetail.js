@@ -39,7 +39,7 @@ export const PlantDetail =()=> {
         <section className="plant" style={{ width: '20rem' }}>
         <Row>
             <Col>
-            <img src={plant.imageURL} className="plant__image"/>
+            <img src={plant.imageURL} className="plant__detail__image"/>
             </Col>
 
             <Col>
@@ -61,8 +61,8 @@ export const PlantDetail =()=> {
        
         <br/>
         <section className="plant__btns">
-          <Button className="plant__edit__btn" variant="outline-info" size="sm" onClick={() => {history.push(`/plants/edit/${plantId}`)}}>Edit Plant</Button>{' '}
-          <Button className="plant__delete__btn" variant="outline-danger" size="sm" onClick={handleDelete}><i class="fas fa-trash-alt"></i></Button>
+          <Button className="plant__edit__btn" variant="link" onClick={() => {history.push(`/plants/edit/${plantId}`)}}><i class="far fa-edit"></i></Button>{' '}
+          <Button className="plant__delete__btn" variant="link" onClick={handleDelete}><i class="fas fa-trash-alt"></i></Button>
           </section>
         </section>
         <br/>

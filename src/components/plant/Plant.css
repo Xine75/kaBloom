@@ -20,7 +20,10 @@
 }
 
 .plant__image {
-    margin-left: 1rem
+    margin-left: 1rem;
+    width: 100%;
+    height: 90%;
+    flex-shrink: 0;
   
 }
 .plant__name {
@@ -37,6 +40,11 @@
     font-family: Caveat;
     font-size: 40px
 }
+
+.plant__detail__image{
+    margin-top: 1rem;
+  
+}
 .plant__wateredToday__btn {
     margin-top: 1rem;
 }
@@ -45,7 +53,7 @@
     margin-right: 1rem
 }
 .plant__delete__btn {
-    margin-left: 7rem
+    color: red;
 }
 .plant__done__btn {
     margin-left: 8rem;
