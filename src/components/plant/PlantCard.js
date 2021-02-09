@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { PlantContext } from "./PlantProvider"
 import Card from "react-bootstrap/Card"
@@ -17,14 +17,30 @@ export const PlantCard = ({ plant }) => {
   const { updatePlant, getPlants } = useContext(PlantContext)
   const timestamp = Date.now()
 
-  ///------------ I WATERED TODAYY BABYY -----------------------
+  ///------------ UPADATE LAST WATERED DATE -----------------------
+  
+  const [isWatered, setIsWatered] = useState();
 
-  const UpdateLastWatered = () => {
+  const UpdateLastWatered = (e) => {
+    e.preventDefault()
+    if (plant.lastWatered === new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(timestamp)) {
+      setIsWatered(true)
+    } else {
     const updatedPlant = { ...plant }
     updatedPlant.lastWatered = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(timestamp)
+    setIsWatered(true)
     updatePlant(updatedPlant)
       .then(getPlants)
+    }
   }
+//-----------------CHECK STATE TO SEE IF PLANT WAS WATERED TODAY-----------------
+  useEffect(() => {
+    if (plant.lastWatered === new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(timestamp)) {
+      setIsWatered(true)
+    } else {
+    setIsWatered(false)
+    }
+  }, [])
 
   //------------------JSX FOR PLANT CARD ----------------------------------
   return (
@@ -53,7 +69,7 @@ export const PlantCard = ({ plant }) => {
         <Row className="row__bottom">
           <Col><div className="plant_lastWatered">Last watered: <b>{new Date(plant.lastWatered).toLocaleDateString()}</b></div></Col>
           <Col><Button className="plant__wateredToday__btn" variant="primary" size="sm" id={plant.id} onClick={UpdateLastWatered}>
-            Watered Today!
+            {isWatered ? <i className="fas fa-check"></i> : "I Watered Today!"  }
       </Button>
           </Col>
         </Row>
@@ -64,4 +80,6 @@ export const PlantCard = ({ plant }) => {
      </>
   )
 }
+
+
 

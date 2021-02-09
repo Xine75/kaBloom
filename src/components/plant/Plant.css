@@ -8,10 +8,12 @@
     height: 45rem;
     overflow: scroll;
 }
+
+/* ------------Plant Cards---------------- */
+
 .plant{
     margin-left: 2rem;
 
- 
 }
 
 .new__plant__btn{
