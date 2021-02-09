@@ -98,7 +98,7 @@ export const PlantForm = () => {
           }
       }, [])
 
-//---------------------- THE ADD / EDIT PLANT FORM --------------------------
+//---------------------- JSX ADD / EDIT PLANT FORM --------------------------
     return (
         <>
         <form className="plantForm">
