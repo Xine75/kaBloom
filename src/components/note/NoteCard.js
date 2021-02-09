@@ -32,7 +32,7 @@ export const NoteCard = ({note}) => {
             <Card.Body className="note__text">
             <div className="note__text">{note.text}</div>
             </Card.Body>
-            <Button variant="link" size="sm" onClick={handleDelete}>Delete</Button>
+            <Button variant="link" size="sm" onClick={handleDelete}><i class="fas fa-trash-alt"></i></Button>
         </Card>
         </>
     )

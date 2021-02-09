@@ -1,9 +1,39 @@
 .heading {
     display: flex;
+    flex-direction: column;
     color: #028A0f;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-left: 5rem;
-
-  
+    /* margin-left: 2rem; */
+   
+   
 }
+.logo__left{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    
+    
+    padding: 0;
+}
+.logo__right{
+    margin-top: 1rem;
+    margin-right: 2rem;
+    color: #32612d;
+    padding: 0;
+}
+.heading__center{
+    display:flex;
+}
+.leaf__left, .leaf__right{
+    margin-top: .9rem;
+    padding: .5rem;
+    color: #32612d;
+}
+.leaf__left{
+    transform: scaleX(-1);
+}
+
+/* .iconic__kabloom {
+    display: flex;
+    flex: wrap;
+} */

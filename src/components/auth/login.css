@@ -3,6 +3,11 @@
     margin-right: 1rem;
     margin-top: 10rem;
 }
-.login__btn {
-    margin-top: 2rem;
+.form--login{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 10rem; 
+}
+.form--login__title{
+    color: #028a0f
 }

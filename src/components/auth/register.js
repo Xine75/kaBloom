@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import { useHistory } from "react-router-dom"
+import Button from "react-bootstrap/Button"
 import "./Login.css"
 
 export const Register = (props) => {
@@ -48,6 +49,7 @@ export const Register = (props) => {
     }
 
     return (
+        <>
         <main style={{ textAlign: "center" }}>
 
             <dialog className="dialog dialog--password" ref={conflictDialog}>
@@ -65,10 +67,12 @@ export const Register = (props) => {
                     <label htmlFor="inputEmail"> Email address </label>
                     <input ref={email} type="email" name="email" className="form-control" placeholder="Email address" required />
                 </fieldset>
+                <br/>
                 <fieldset>
-                    <button type="submit"> Sign in </button>
+                    <Button type="submit"> Sign in </Button>
                 </fieldset>
             </form>
         </main>
+        </>
     )
 }
