@@ -3,8 +3,7 @@ import { useHistory } from "react-router-dom"
 import { NoteContext } from "./NoteProvider"
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
-import Col from "react-bootstrap/Col"
-import Row from "react-bootstrap/Row"
+
 import "./Note.css"
 
 //NoteCard creates a function called NoteCard which:
@@ -27,12 +26,13 @@ export const NoteCard = ({note}) => {
     return (
         <>
         <Card className="note" border="secondary" style={{ width: '2 rem'}} id={note.id}>
-        <Card.Header className="note__date">{note.date}</Card.Header>
+        <Card.Header className="note__date">{note.date}
+        </Card.Header>
 
             <Card.Body className="note__text">
             <div className="note__text">{note.text}</div>
             </Card.Body>
-            <Button variant="link" size="sm" onClick={handleDelete}><i class="fas fa-trash-alt"></i></Button>
+            <Button variant="link" size="sm" onClick={handleDelete}><i className="note__trash fas fa-trash-alt"></i></Button>
         </Card>
         </>
     )

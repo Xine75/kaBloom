@@ -9,6 +9,10 @@
     width: 25rem; 
 }
 
+.notes__btn {
+    margin-left: 2rem
+}
+
 /* ------------Note Card---------------- */
 .note{
     margin-left: 2rem;
@@ -23,9 +27,10 @@
 .note__text{
     overflow: scroll;
 }
-.notes__btn {
-    margin-left: 2rem
+.note__trash{
+    margin-left:7rem;
 }
+
 
 /* ------------Note Form---------------- */
 .noteForm{

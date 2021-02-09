@@ -61,8 +61,8 @@ export const PlantDetail =()=> {
        
         <br/>
         <section className="plant__btns">
-          <Button className="plant__edit__btn" variant="link" onClick={() => {history.push(`/plants/edit/${plantId}`)}}><i class="far fa-edit"></i></Button>{' '}
-          <Button className="plant__delete__btn" variant="link" onClick={handleDelete}><i class="fas fa-trash-alt"></i></Button>
+          <Button className="plant__edit__btn" variant="link" onClick={() => {history.push(`/plants/edit/${plantId}`)}}><i className="far fa-edit"></i></Button>{' '}
+          <Button className="plant__delete__btn" variant="link" onClick={handleDelete}><i className="fas fa-trash-alt"></i></Button>
           </section>
         </section>
         <br/>
