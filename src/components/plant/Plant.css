@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
 
 /* ------------Plant List---------------- */
 .plants {
@@ -13,12 +14,17 @@
 
 .plant{
     margin-left: 2rem;
-
+    
 }
 
+.plant__card {
+    
+}
 .new__plant__btn{
-    margin-left: 5rem;
+    margin-left: 3rem;
     margin-top: 2rem;
+    font-family: EB Garamond, serif;
+    background-color: #b284be;
 }
 
 .plant__image {
@@ -30,9 +36,12 @@
 }
 .plant__name {
     color: #028A0f;
-    font-family: Caveat;
+    font-family: "Caveat";
     font-size: 30px;
     margin-top: 1rem; 
+}
+.plant__wateredToday__btn{
+    background-color: #0492c2;
 }
 
 

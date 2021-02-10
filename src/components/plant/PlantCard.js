@@ -68,7 +68,7 @@ export const PlantCard = ({ plant }) => {
 
         <Row className="row__bottom">
           <Col><div className="plant_lastWatered">Last watered: <b>{new Date(plant.lastWatered).toLocaleDateString()}</b></div></Col>
-          <Col><Button className="plant__wateredToday__btn" variant="primary" size="sm" id={plant.id} onClick={UpdateLastWatered}>
+          <Col><Button className="plant__wateredToday__btn" variant="outline-light" size="sm" id={plant.id} onClick={UpdateLastWatered}>
             {isWatered ? <i className="fas fa-check"></i> : "I Watered Today!"  }
       </Button>
           </Col>
