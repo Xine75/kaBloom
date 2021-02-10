@@ -18,8 +18,9 @@
     margin-left: 2rem;
     margin-bottom: 2rem;
     width: 10rem;
-    height: 10rem;
+    height: 9rem;
     overflow: auto;
+    background-color: #b2d3c2;
 }
 .notes__header {
     margin-left: 2rem

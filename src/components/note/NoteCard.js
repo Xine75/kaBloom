@@ -25,7 +25,7 @@ export const NoteCard = ({note}) => {
 //----------------JSX FOR NOTE CARD --------------------------
     return (
         <>
-        <Card className="note" border="secondary" style={{ width: '2 rem'}} id={note.id}>
+        <Card className="note" border="secondary" style={{ width: '2 rem'}} bg="#b2d3c2" id={note.id}>
         <Card.Header className="note__date">{note.date}
         </Card.Header>
 
