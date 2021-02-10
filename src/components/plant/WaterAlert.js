@@ -2,12 +2,15 @@ import React, { useContext, useState, useEffect } from "react"
 import { PlantContext } from "./PlantProvider"
 import Button from "react-bootstrap/Button"
 import Alert from "react-bootstrap/Alert"
+import moment from 'moment';
+
 
 export const WaterAlert = () => {
 
     const { getPlants } = useContext(PlantContext)
     const currentUser = parseInt(sessionStorage.getItem("kabloom_user"))
     const today = Date.now()
+    
 
     //--------------REACH OUT AND GET THOSE PLANTS---------------------
 
@@ -19,7 +22,7 @@ export const WaterAlert = () => {
 
     const userPlants = plants.filter(p => p.userId === currentUser);
     const needWater = userPlants.filter(userPlants => {
-//todays date - userPlants.lastWatered >= 10 days
+//today plant.lastWatered === today - 10
 
     }
 
