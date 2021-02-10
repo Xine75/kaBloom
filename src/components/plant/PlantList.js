@@ -33,8 +33,8 @@ export const PlantList = () => {
                     })
                 }
                 </div>
-       <Button className="new__plant__btn" variant="success" size="lg" style={{ width: '20rem'  }} onClick={() => {history.push("/plant/create")}}>
-          kaBloom! I got a new plant!
+       <Button className="new__plant__btn" variant="outline-light" size="lg" style={{ width: '20rem'  }} onClick={() => {history.push("/plant/create")}}>
+          <b>kaBloom!</b> I got a new plant!
       </Button>           
         
         </>

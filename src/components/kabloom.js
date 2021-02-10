@@ -6,6 +6,7 @@ import { Register } from "./auth/Register";
 
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
+import Image from "react-bootstrap/Image"
 import "./Kabloom.css";
 
 export const Kabloom = () => (
@@ -15,14 +16,7 @@ export const Kabloom = () => (
         if (sessionStorage.getItem("kabloom_user")) {
           return (
             <>
-
-            <Row></Row>
-            <Row className="iconic__kabloom">
-              <Col className="logo__left"></Col>
-              <Col className="heading__center"><i className="leaf__left fab fa-pagelines"></i>  <Link to={"/plants"} className="heading">kaBloom</Link>  <i className="leaf__right fab fa-pagelines"></i></Col>
-              <Col className="logo__right"></Col>
-              </Row>
-              <Row></Row>
+              <Col className="heading__center"><Link to={"/plants"}><Image className="logo" src="https://res.cloudinary.com/kabloom/image/upload/c_scale,w_101/v1612993232/kabloom/kaBloomLogo2_pismua.png"/></Link></Col>
              
               <ApplicationViews />
             </>
@@ -41,4 +35,7 @@ export const Kabloom = () => (
     </Route>
   </>
 );
+
+//<i className="leaf__left fab fa-pagelines"></i>  <Link to={"/plants"} className="heading">kaBloom</Link>  <i className="leaf__right fab fa-pagelines"></i>
+//<Card.Img src={plant.imageURL} className="plant__card__image" />
 
