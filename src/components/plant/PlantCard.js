@@ -51,7 +51,7 @@ export const PlantCard = ({ plant }) => {
         <Row className="row__top">
 
           <Col className="plant__left">
-            <Card.Img src={plant.imageURL} className="plant__card__image" />
+            <Card.Img className="plant__card__image" src={plant.imageURL} />
           </Col>
 
           <Col className="plant__right">
@@ -68,7 +68,7 @@ export const PlantCard = ({ plant }) => {
 
         <Row className="row__bottom">
           <Col><div className="plant_lastWatered">Last watered: <b>{new Date(plant.lastWatered).toLocaleDateString()}</b></div></Col>
-          <Col><Button className="plant__wateredToday__btn" variant="outline-light" size="sm" id={plant.id} onClick={UpdateLastWatered}>
+          <Col><Button className="plant__wateredToday__btn" variant="info" size="sm" id={plant.id} onClick={UpdateLastWatered}>
             {isWatered ? <i className="fas fa-check"></i> : "I Watered Today!"  }
       </Button>
           </Col>

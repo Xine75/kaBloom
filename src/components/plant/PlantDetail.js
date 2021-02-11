@@ -51,14 +51,14 @@ export const PlantDetail =()=> {
 
         </Row>
         <br/>
-       
+       <section className="plant__details">
           <h3 className="plant__detail__name">{plant.name}</h3>
           <div className="plant__detail__type">{plant.type}</div>
           <div className="plant__dateAdopted">Date adopted: <b>{new Date(plant.dateAdopted).toLocaleDateString()}</b></div>
           <div className="plant__water">Water: <b>{plant.water}</b></div>
           <div className="plant__light">Light: <b>{plant.light}</b></div>
           <div className="plant__water">Fertilize? <b>{plant.fertilize}</b></div>
-       
+          </section>
         <br/>
         <section className="plant__btns">
           <Button className="plant__edit__btn" variant="link" onClick={() => {history.push(`/plants/edit/${plantId}`)}}><i className="far fa-edit"></i></Button>{' '}

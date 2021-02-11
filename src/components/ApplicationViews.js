@@ -8,7 +8,6 @@ import { PlantDetail } from "./plant/PlantDetail"
 import { PlantForm } from "./plant/PlantForm"
 
 import { NoteProvider } from "./note/NoteProvider"
-import { NoteList } from "./note/NoteList"
 import { NoteForm } from "./note/NoteForm"
 
 export const ApplicationViews = () => {

@@ -6,8 +6,14 @@
 .plants {
     overflow: auto;
     margin-left: 2rem;
-    height: 45rem;
+    height: 40rem;
     overflow: scroll;
+}
+.new__plant__btn{
+    margin-left: 3rem;
+    margin-top: 2rem;
+    font-family: EB Garamond, serif;
+   
 }
 
 /* ------------Plant Cards---------------- */
@@ -17,15 +23,6 @@
     
 }
 
-.plant__card {
-    
-}
-.new__plant__btn{
-    margin-left: 3rem;
-    margin-top: 2rem;
-    font-family: EB Garamond, serif;
-    background-color: #b284be;
-}
 
 .plant__image {
     margin-left: 1rem;
@@ -40,21 +37,22 @@
     font-size: 30px;
     margin-top: 1rem; 
 }
-.plant__wateredToday__btn{
-    background-color: #0492c2;
-}
+
 
 
 /* ------------Plant Detail---------------- */
 
 .plant__detail__name {
     color: #028A0f;
-    font-family: Caveat;
+    font-family: "Caveat";
     font-size: 40px
 }
 
 .plant__detail__image{
     margin-top: 1rem;
+    width: 100%;
+    height: 90%;
+    flex-shrink: 0;
   
 }
 .plant__wateredToday__btn {
@@ -74,8 +72,10 @@
 /* ------------Plant Form---------------- */
 
 .plantForm {
-    margin-left: 1rem;
+    margin-left: 2rem;
     margin-right: 1rem;
+    height: 45 rem;
+    background-image: url(https://res.cloudinary.com/kabloom/image/upload/v1612831801/kabloom/Screen_Shot_2021-02-08_at_6.46.01_PM_ujevhh.png);
     
 }
 #dateAdopted{

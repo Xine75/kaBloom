@@ -1,5 +1,4 @@
 import React, { useContext } from "react"
-import { useHistory } from "react-router-dom"
 import { NoteContext } from "./NoteProvider"
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
@@ -14,7 +13,6 @@ import "./Note.css"
 export const NoteCard = ({note}) => {
 
     const { deleteNote, getNotes } = useContext(NoteContext)
-    const history = useHistory()
 
 //----------------- DELETE NOTE FUNCTION ------------------------
 
