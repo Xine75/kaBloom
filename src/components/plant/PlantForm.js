@@ -177,7 +177,7 @@ export const PlantForm = () => {
                 </div>
             </fieldset>
             <button className="btn btn-info" disabled={isLoading} onClick={handleClickSavePlant}>{plantId ? <>Save Changes</> : <>Add Plant</>}</button>
-            <Button className="btn" variant="link" disabled={isLoading} onClick={() => {history.push("/plants")}}>Cancel</Button>
+            <Button className="btn" variant="link"  disabled={isLoading} onClick={() => {history.push("/plants")}}>Cancel</Button>
 
         </form>
         </>
