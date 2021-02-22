@@ -21,7 +21,8 @@ Once a user has entered one or more plants they will be presented with a "home" 
 
 ## Technologies Used
   ### Development Languages and Libraries
-  <img src="./src/images/react.png" width="10%"></img> <img src="./src/images/momentjs.svg" width="10%"></img> <img src="./src/images/semanticui.png" width="10%"></img> <img src="./src/images/reactbigcalendar.png" width="10%"></img>
+  <img src="./src/images/react.png" width="10%"></img> 
+  <img src="./src/images/bootstrap.png" width="10%"></img> <img src="./src/images/cloudinary.png" width="10%"></img> <img src="./src/images/fontawesome.png" width="10%"></img>
 
   ### Development Tools
   <!-- TODO: Image for wireframe tool -->
@@ -29,7 +30,7 @@ Once a user has entered one or more plants they will be presented with a "home" 
   <img src="./src/images/github.png" width="10%"></img> <img src="./src/images/draw.io.jpg" width="10%"></img> <img src="./src/images/git.png" width="10%"></img> <img src="./src/images/vscode.png" width="10%"></img>
   <!-- <img src="./src/images/slack.png" width="10%"></img> -->
 
-## Instructions for Installing Simplified Supper
+## Instructions for Installing KaBloom
   To launch the KaBloom app, you will need to have access to command line tools, node package manager, JSON Server. If you do not have access to any of these tools, you can find instructions for installing them in the [Appendix.](#appendix-2-set-up-instructions)
 
   Clone this repo on you personal machine using the following command
