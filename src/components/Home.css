@@ -11,9 +11,20 @@
 .welcome__body{
     height: 100rem;
     margin-top: -10rem;
-    background-repeat: no-repeat;
+    
 }
-.body{
-    background-image: url(https://res.cloudinary.com/kabloom/image/upload/v1612993244/kabloom/homebgd_pihepy.png);
+.welcome__page{
+    background-image: url(https://res.cloudinary.com/kabloom/image/upload/v1612831801/kabloom/Screen_Shot_2021-02-08_at_6.46.01_PM_ujevhh.png);
+    padding: 2rem;
+    padding-bottom: 13.5rem;
+    background-repeat: no-repeat;
 
+}
+.welcome__text{
+    padding: 2rem
+}
+.welcome__plant__btn{
+    margin-left: -0.1rem;
+    margin-top: 4rem;
+    font-family: EB Garamond, serif;
 }

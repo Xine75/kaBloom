@@ -1,5 +1,5 @@
 # KaBloom
-  KaBloom is intended to make houseplant care easy, allowing the user to see a list of their plants at a glance alongside a few pieces of crucial information - name, photo, type, and date last watered.  As a long-time plant parent, I find naming my plants personifies them and hooks me in to providing more consistent care for them.  Having a photo of the plant as it looked when I first adopted it is an important visual cue for comparing to the plant's current state. With a click, the user can access more detailed information about the plant's care needs, such as lighting, fertilization.  Users can also create personal notes relating to the plant's life events, such as repotting, blooming, etc.
+  KaBloom is a mobile app intended to put houseplant care in the palm of the user's hand. It allows the user to see a list of their plants at a glance alongside a few pieces of crucial information - name, photo, type, and date last watered.  As a long-time plant parent, I find naming my plants personifies them and hooks me in to providing more consistent care for them.  Having a photo of the plant as it looked when I first adopted it is an important visual cue for comparing to the plant's current state. With a click, the user can access more detailed information about the plant's care needs, such as lighting, fertilization.  Users can also create personal notes relating to the plant's life events, such as repotting, blooming, etc.
 
 ## Table of Contents
   * [Project Requirements and Features List](#project-requirements-and-features-list)
@@ -12,12 +12,12 @@
 
 ## Project Requirements and Features List
 ### Get Started
-When a user first registers an account with KaBloom they will be taken through a series of prompts to select their first recipe. By selecting what type of cuisine and course they would like, the user is then presented with all recipes that match their search and are able to select any of them to view more details or add to the calendar, where they can then view their suggested recipes.
-![Get Started GIF](src/gif/get-started-view.gif)
+When a user first registers an account with KaBloom they will be asked to enter their first plant.  The user will upload a photo of the plant and all the care instructions that come with the plant: date adopted, plant name and type, watering instructions, light needs, fertilization schedule and date last watered.
+![Get Started GIF](src/images/ezgif.com-GettingStarted.gif)
 
-### Suggested Recipes
-Once a user has a recipe on their calendar for the week they will be shown all matched recipes in order from highest percentage match of similar ingredients to lowest percentage match of similar ingredients. They can filter these results by cuisine and course, results will be updated in real time. They can also edit the recipes on their calendar or delete any recipes on their calendar and matched recipes will change accordingly.
-![Recipe Suggestion Engine GIF](src/gif/recipe-suggestion-engine.gif)
+### Care Cards
+Once a user has entered one or more plants they will be presented with a "home" screen of plant care cards that allow the user to see the photo, name and type of plant along with the plant's last watered date and a "I watered today!" button to easily update when the plant is watered.  
+![Recipe Suggestion Engine GIF](src/images/ezgif.com-UsingKaBloom.gif)
 
 ## Technologies Used
   ### Development Languages and Libraries
@@ -30,16 +30,16 @@ Once a user has a recipe on their calendar for the week they will be shown all m
   <!-- <img src="./src/images/slack.png" width="10%"></img> -->
 
 ## Instructions for Installing Simplified Supper
-  To launch the Simplified Supper app, you will need to have access to command line tools, node package manager, JSON Server. If you do not have access to any of these tools, you can find instructions for installing them in the [Appendix.](#appendix-2-set-up-instructions)
+  To launch the KaBloom app, you will need to have access to command line tools, node package manager, JSON Server. If you do not have access to any of these tools, you can find instructions for installing them in the [Appendix.](#appendix-2-set-up-instructions)
 
   Clone this repo on you personal machine using the following command
   ```sh
-    git clone git@github.com:kellymorin/simplifiedSupper.git
+    git clone git@github.com:xine75/kaBloom.git
   ```
 
   Install the NPM dependencies for this project using the following commands
   ```sh
-    cd simplified-supper
+    cd kabloom
     npm install
   ```
 
@@ -53,7 +53,7 @@ Once a user has a recipe on their calendar for the week they will be shown all m
     http://localhost:8080/
   ```
 
- ### Congratulations you are now experiencing Simplified Supper!
+ ### Congratulations you are now experiencing KaBloom!
 
   ## Appendix 1: Planning Documentation
 
