@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# KaBloom
+  KaBloom is intended to make houseplant care easy, allowing the user to see a list of their plants at a glance alongside a few pieces of crucial information - name, photo, type, and date last watered.  As a long-time plant parent, I find naming my plants personifies them and hooks me in to providing more consistent care for them.  Having a photo of the plant as it looked when I first adopted it is an important visual cue for comparing to the plant's current state. With a click, the user can access more detailed information about the plant's care needs, such as lighting, fertilization.  Users can also create personal notes relating to the plant's life events, such as repotting, blooming, etc.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+  * [Project Requirements and Features List](#project-requirements-and-features-list)
+  * [Technologies Used](#technologies-used)
+  * [Installing and Launching KaBloom](#instructions-for-installing-simplified-supper)
+  * [Appendix 1: Planning Documentation](#appendix-1-planning-documentation)
+    * [Entity Relationship Diagrams](#entity-relationship-diagram)
+    * [Wireframes](#wireframes)
+  * [Appendix 2: Set Up Instructions](#appendix-2-set-up-instructions)
 
-## Available Scripts
+## Project Requirements and Features List
+### Get Started
+When a user first registers an account with KaBloom they will be taken through a series of prompts to select their first recipe. By selecting what type of cuisine and course they would like, the user is then presented with all recipes that match their search and are able to select any of them to view more details or add to the calendar, where they can then view their suggested recipes.
+![Get Started GIF](src/gif/get-started-view.gif)
 
-In the project directory, you can run:
+### Suggested Recipes
+Once a user has a recipe on their calendar for the week they will be shown all matched recipes in order from highest percentage match of similar ingredients to lowest percentage match of similar ingredients. They can filter these results by cuisine and course, results will be updated in real time. They can also edit the recipes on their calendar or delete any recipes on their calendar and matched recipes will change accordingly.
+![Recipe Suggestion Engine GIF](src/gif/recipe-suggestion-engine.gif)
 
-### `npm start`
+## Technologies Used
+  ### Development Languages and Libraries
+  <img src="./src/images/react.png" width="10%"></img> <img src="./src/images/momentjs.svg" width="10%"></img> <img src="./src/images/semanticui.png" width="10%"></img> <img src="./src/images/reactbigcalendar.png" width="10%"></img>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ### Development Tools
+  <!-- TODO: Image for wireframe tool -->
+  <!-- FIXME: Update image for slack, currently showing a broken link -->
+  <img src="./src/images/github.png" width="10%"></img> <img src="./src/images/draw.io.jpg" width="10%"></img> <img src="./src/images/git.png" width="10%"></img> <img src="./src/images/vscode.png" width="10%"></img>
+  <!-- <img src="./src/images/slack.png" width="10%"></img> -->
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Instructions for Installing Simplified Supper
+  To launch the Simplified Supper app, you will need to have access to command line tools, node package manager, JSON Server. If you do not have access to any of these tools, you can find instructions for installing them in the [Appendix.](#appendix-2-set-up-instructions)
 
-### `npm test`
+  Clone this repo on you personal machine using the following command
+  ```sh
+    git clone git@github.com:kellymorin/simplifiedSupper.git
+  ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  Install the NPM dependencies for this project using the following commands
+  ```sh
+    cd simplified-supper
+    npm install
+  ```
 
-### `npm run build`
+  From your terminal window, type
+  ```sh
+    npm start
+  ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  Now that the server is up and running, you can open an internet browser and access the application
+  ```sh
+    http://localhost:8080/
+  ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ ### Congratulations you are now experiencing Simplified Supper!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ## Appendix 1: Planning Documentation
 
-### `npm run eject`
+  ### Entity Relationship Diagram
+  ![Simplified Supper ERD](/src/images/Simplified_Supper_ERD.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  ### Wireframes/ Mockups
+  <img src="./src/images/wireframe_1.png" width="45%"></img> <img src="./src/images/wireframe_2.png" width="45%"></img>
+  <img src="./src/images/wireframe_3.png" width="45%"></img> <img src="./src/images/wireframe_4.png" width="45%"></img>
+  <img src="./src/images/wireframe_5.png" width="45%"></img> <img src="./src/images/wireframe_6.png" width="45%"></img>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  ## Appendix 2: Set Up Instructions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  You will need to have command line tools installed for your computer to use terminal commands.
 
-## Learn More
+  Linux/ Windows users, please visit the [Git page](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and follow the instructions for set up
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  Mac users follow the instructions below
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  Open your terminal and type
+  ```sh
+    git --version
+  ```
 
-### Code Splitting
+  You will now need to configure your git account. In the terminal window, type:
+  ```sh
+    git config -global user.name "Your Name"
+    git config -global user.email "Your Email"
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  If you do not have Node.js installed on your machine, visit the [Node.js Download Page](https://nodejs.org/en/download/) and  follow the instructions. To ensure that it is installed correctly, in your terminal window, type
+  ```sh
+    echo $PATH
+  ```
+  Ensure that the result has the following in the $PATH
+  ```sh
+    /usr/local/bin
+    or
+    /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  ```
 
-### Analyzing the Bundle Size
+  Now you can follow the [installation instructions](#instructions-for-installing-simplified-supper) to get Simplified Supper up and running on your machine.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
