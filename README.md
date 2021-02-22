@@ -26,7 +26,7 @@ Once a user has entered one or more plants they will be presented with a "home" 
 
   ### Development Tools
  
-  <img src="./src/images/github.png" width="10%"></img> <img src="./src/images/sketchboard.jpeg" width="10%"></img> <img src="./src/images/dbdiagram.png" width="20%"></img> <img src="./src/images/vsCode.png" width="10%"></img>
+  <img src="./src/images/github.png" width="10%"></img> <img src="./src/images/sketchboard.jpeg" width="10%"></img> <img src="./src/images/dbdiagram.png" width="20%"></img> <img src="./src/images/vsCode .png" width="10%"></img>
   
 
 ## Instructions for Installing KaBloom
@@ -58,12 +58,10 @@ Once a user has entered one or more plants they will be presented with a "home" 
   ## Appendix 1: Planning Documentation
 
   ### Entity Relationship Diagram
-  ![Simplified Supper ERD](/src/images/Simplified_Supper_ERD.png)
+  ![KaBloom ERD](/src/images/erd.png)
 
   ### Wireframes/ Mockups
-  <img src="./src/images/wireframe_1.png" width="45%"></img> <img src="./src/images/wireframe_2.png" width="45%"></img>
-  <img src="./src/images/wireframe_3.png" width="45%"></img> <img src="./src/images/wireframe_4.png" width="45%"></img>
-  <img src="./src/images/wireframe_5.png" width="45%"></img> <img src="./src/images/wireframe_6.png" width="45%"></img>
+  <img src="./src/images/wireframe.png" width="75%"></img> 
 
 
   ## Appendix 2: Set Up Instructions
@@ -96,7 +94,7 @@ Once a user has entered one or more plants they will be presented with a "home" 
     /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
   ```
 
-  Now you can follow the [installation instructions](#instructions-for-installing-simplified-supper) to get Simplified Supper up and running on your machine.
+  Now you can follow the [installation instructions](#instructions-for-installing-kabloom) to get KaBloom up and running on your machine.
 
   This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
