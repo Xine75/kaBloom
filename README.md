@@ -13,7 +13,7 @@
 ## Project Requirements and Features List
 ### Get Started
 When a user first registers an account with KaBloom they will be asked to enter their first plant.  The user will upload a photo of the plant and all the care instructions that come with the plant: date adopted, plant name and type, watering instructions, light needs, fertilization schedule and date last watered.
-![Get Started GIF](src/images/ezgif.com-GettingStarted.gif)
+![Get Started GIF](src/images/GettingStarted.gif)
 
 ### Care Cards
 Once a user has entered one or more plants they will be presented with a "home" screen of plant care cards that allow the user to see the photo, name and type of plant along with the plant's last watered date and a "I watered today!" button to easily update when the plant is watered.  
@@ -26,7 +26,10 @@ Once a user has entered one or more plants they will be presented with a "home" 
 
   ### Development Tools
  
-  <img src="./src/images/github.png" width="10%"></img> <img src="./src/images/sketchboard.jpeg" width="10%"></img> <img src="./src/images/dbdiagram.png" width="20%"></img> <img src="./src/images/vsCode .png" width="10%"></img>
+  <img src="./src/images/github.png" width="10%"></img> 
+  <img src="./src/images/vsCode .png" width="10%"></img>
+  <img src="./src/images/sketchboard.jpeg" width="10%"></img> 
+  <img src="./src/images/dbdiagram.png" width="20%"></img> 
   
 
 ## Instructions for Installing KaBloom
