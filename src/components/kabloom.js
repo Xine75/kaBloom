@@ -34,6 +34,4 @@ export const Kabloom = () => (
   </>
 );
 
-//<i className="leaf__left fab fa-pagelines"></i>  <Link to={"/plants"} className="heading">kaBloom</Link>  <i className="leaf__right fab fa-pagelines"></i>
-//<Card.Img src={plant.imageURL} className="plant__card__image" />
 
