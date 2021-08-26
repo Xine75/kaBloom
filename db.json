@@ -1,0 +1,355 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "xine",
+      "email": "xine@kabloom.com"
+    },
+    {
+      "id": 2,
+      "firsName": "Jeanette",
+      "email": "jeanette@kabloom.com"
+    },
+    {
+      "email": "megan@kabloom.com",
+      "name": "Megan Bottomlee",
+      "id": 3
+    },
+    {
+      "email": "jeff@kabloom.com",
+      "name": "Jeff",
+      "id": 4
+    },
+    {
+      "email": "jess@kabloom.com",
+      "name": "Jess",
+      "id": 5
+    },
+    {
+      "email": "iman@kabloom.com",
+      "name": "Iman",
+      "id": 6
+    },
+    {
+      "email": "Readme@readme.com",
+      "name": "ReadMe",
+      "id": 7
+    }
+  ],
+  "plants": [
+    {
+      "id": 1,
+      "userId": 1,
+      "type": "Philodendron",
+      "name": "Phil",
+      "dateAdopted": "7/10/20",
+      "water": "Let soil dry between waterings",
+      "light": "Medium",
+      "fertilize": "Monthly",
+      "lastWatered": "05/17/2021",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/c_scale,w_228/v1612888527/kabloom/l5mv4dpsp1nydfap6dac.png",
+      "notes": [
+        {
+          "id": 1,
+          "plantId": 1,
+          "date": "1/13/20",
+          "text": "Repotted"
+        },
+        {
+          "id": 2,
+          "plantId": 1,
+          "date": "2/13/20",
+          "text": "Bloomed"
+        },
+        {
+          "plantId": 1,
+          "text": "Lost a branch",
+          "date": "02/22/2021",
+          "id": 26
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "type": "Spider",
+      "name": "Arachne",
+      "dateAdopted": "2/10/19",
+      "water": "Let top of soil dry before watering",
+      "light": "medium",
+      "fertilize": "every 6 months",
+      "lastWatered": "02/10/2021",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/v1611935227/kabloom/Spider_tn0ljr.png",
+      "notes": [
+        {
+          "plantId": 2,
+          "text": "I played Mozart for her",
+          "date": "02/02/2021",
+          "id": 6
+        },
+        {
+          "plantId": 2,
+          "text": "Some leaves turned yellow",
+          "date": "02/04/2021",
+          "id": 14
+        }
+      ]
+    },
+    {
+      "userId": 3,
+      "type": "Croton plant",
+      "name": "Rhonda",
+      "dateAdopted": "2007-02-03",
+      "water": "Let soil dry between waterings",
+      "light": "Direct",
+      "fertilize": "Every 6 months",
+      "lastWatered": "02/02/2021",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/c_scale,w_73/v1612297687/kabloom/z58lotsiko9hwrhfe0zi.jpg",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "userId": 4,
+      "type": "String of Pearls",
+      "name": "Marcel",
+      "dateAdopted": "2020-02-06",
+      "water": "Let top of soil dry before watering",
+      "light": "Bright indirect",
+      "fertilize": "Every 6 months",
+      "lastWatered": "2021-02-03",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/v1612305726/kabloom/gxckmc7vugnzty2q77tl.png"
+    },
+    {
+      "id": 7,
+      "userId": 4,
+      "type": "Cliff hanger",
+      "name": "Tisha",
+      "dateAdopted": "2020-12-14",
+      "water": "Let soil dry between waterings",
+      "light": "Direct",
+      "fertilize": "Yearly",
+      "lastWatered": "2021-01-31",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/v1612381731/kabloom/z7qm0fo9qcjedibn6itk.png"
+    },
+    {
+      "userId": 2,
+      "type": "Aloe",
+      "name": "Rocky",
+      "dateAdopted": "2020-05-10",
+      "water": "Water infrequently",
+      "light": "As much direct sun as possible",
+      "fertilize": "Yearly",
+      "lastWatered": "02/10/2021",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/v1612451403/kabloom/kotnz9v1yadso2nc6aup.png",
+      "id": 8,
+      "notes": [
+        {
+          "plantId": 8,
+          "text": "Got as baby from Heather and he is growing nicely",
+          "date": "02/04/2021",
+          "id": 13
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "type": "Chinese Money Plant",
+      "name": "Joe",
+      "dateAdopted": "2020-01-02",
+      "water": "Let top of soil dry before watering",
+      "light": "Bright indirect",
+      "fertilize": "Yearly",
+      "lastWatered": "05/17/2021",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/v1612541382/kabloom/exbydqv0wsnodouwncdu.png",
+      "notes": [
+        {
+          "plantId": 9,
+          "text": "DO NOT OVER WATER",
+          "date": "02/05/2021",
+          "id": 15
+        },
+        {
+          "plantId": 9,
+          "text": "Played Mozart",
+          "date": "02/08/2021",
+          "id": 21
+        },
+        {
+          "plantId": 9,
+          "text": "Special care bc he has frost damage",
+          "date": "02/23/2021",
+          "id": 27
+        }
+      ]
+    },
+    {
+      "userId": 1,
+      "type": "Snake Plant",
+      "name": "Sissy",
+      "dateAdopted": "2020-11-13",
+      "water": "Let soil dry between waterings",
+      "light": "Low",
+      "fertilize": "Monthly",
+      "lastWatered": "02/23/2021",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/v1612800374/kabloom/lvzqael7q8zazgy80pg4.png",
+      "id": 11,
+      "notes": [
+        {
+          "plantId": 11,
+          "text": "She doesn't need much water at all",
+          "date": "02/08/2021",
+          "id": 23
+        }
+      ]
+    },
+    {
+      "userId": 1,
+      "type": "Dark Mystery",
+      "name": "Iris",
+      "dateAdopted": "2020-05-07",
+      "water": "Let soil dry between waterings",
+      "light": "Bright indirect",
+      "fertilize": "Monthly",
+      "lastWatered": "02/23/2021",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/v1612800416/kabloom/cmcghqu3fxscqhwj1awo.png",
+      "id": 12,
+      "notes": [
+        {
+          "plantId": 12,
+          "text": "My cat knocked her down the stairs",
+          "date": "02/12/2021",
+          "id": 24
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "userId": 1,
+      "type": "Firesticks",
+      "name": "Rhonda",
+      "dateAdopted": "2020-12-03",
+      "water": "Water infrequently",
+      "light": "Direct",
+      "fertilize": "Every 6 months",
+      "lastWatered": "2021-02-21",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/v1613178610/kabloom/a5mbyj4hyfzy0nm11ozk.png"
+    },
+    {
+      "userId": 7,
+      "type": "Pink pothos",
+      "name": "Rita",
+      "dateAdopted": "2021-02-22",
+      "water": "Let soil dry between waterings",
+      "light": "Bright indirect",
+      "fertilize": "Every other month",
+      "lastWatered": "2021-02-21",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/v1614011399/kabloom/ridxxrpppk2nbk474fjb.png",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "type": "Christmas cactus",
+      "name": "Chrissy",
+      "dateAdopted": "2021-02-21",
+      "water": "Water infrequently",
+      "light": "Direct",
+      "fertilize": "Every 6 months",
+      "lastWatered": "2021-02-21",
+      "imageURL": "https://res.cloudinary.com/kabloom/image/upload/v1614098919/kabloom/dwnytdk5uo7hrvxvyoay.png",
+      "id": 16
+    }
+  ],
+  "notes": [
+    {
+      "id": 1,
+      "plantId": 1,
+      "date": "1/13/20",
+      "text": "Repotted"
+    },
+    {
+      "id": 2,
+      "plantId": 1,
+      "date": "2/13/20",
+      "text": "Bloomed"
+    },
+    {
+      "plantId": 2,
+      "text": "I played Mozart for her",
+      "date": "02/02/2021",
+      "id": 6
+    },
+    {
+      "plantId": 5,
+      "text": "Shined her leaves",
+      "date": "02/02/2021",
+      "id": 7
+    },
+    {
+      "plantId": 6,
+      "text": "Peas are delated",
+      "date": "02/03/2021",
+      "id": 10
+    },
+    {
+      "plantId": 7,
+      "text": "She's blooming - wooooowowowowowww",
+      "date": "02/03/2021",
+      "id": 11
+    },
+    {
+      "plantId": 7,
+      "text": "A hummingbird came today!",
+      "date": "02/03/2021",
+      "id": 12
+    },
+    {
+      "plantId": 8,
+      "text": "Got as baby from Heather and he is growing nicely",
+      "date": "02/04/2021",
+      "id": 13
+    },
+    {
+      "plantId": 2,
+      "text": "Some leaves turned yellow",
+      "date": "02/04/2021",
+      "id": 14
+    },
+    {
+      "plantId": 9,
+      "text": "DO NOT OVER WATER",
+      "date": "02/05/2021",
+      "id": 15
+    },
+    {
+      "plantId": 9,
+      "text": "Played Mozart",
+      "date": "02/08/2021",
+      "id": 21
+    },
+    {
+      "plantId": 11,
+      "text": "She doesn't need much water at all",
+      "date": "02/08/2021",
+      "id": 23
+    },
+    {
+      "plantId": 12,
+      "text": "My cat knocked her down the stairs",
+      "date": "02/12/2021",
+      "id": 24
+    },
+    {
+      "plantId": 1,
+      "text": "Lost a branch",
+      "date": "02/22/2021",
+      "id": 26
+    },
+    {
+      "plantId": 9,
+      "text": "Special care bc he has frost damage",
+      "date": "02/23/2021",
+      "id": 27
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+.heading {
+   
+margin-left: 2rem;
+}
+
+.heading__center{
+    display:flex;
+    margin-left: 8.5rem;
+    
+}
