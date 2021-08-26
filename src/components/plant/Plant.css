@@ -1,0 +1,87 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
+
+/* ------------Plant List---------------- */
+.plants {
+    overflow: auto;
+    margin-left: 2rem;
+    height: 40rem;
+    overflow: scroll;
+}
+.new__plant__btn{
+    margin-left: 3rem;
+    margin-top: 2rem;
+    font-family: EB Garamond, serif;
+   
+}
+
+/* ------------Plant Cards---------------- */
+
+.plant{
+    margin-left: 2rem;
+    
+}
+
+.plant__image {
+    margin-left: 1rem;
+    width: 100%;
+    height: 90%;
+    flex-shrink: 0;
+  
+}
+.plant__name {
+    color: #028A0f;
+    font-family: "Caveat";
+    font-size: 30px;
+    margin-top: 1rem; 
+}
+
+
+
+/* ------------Plant Detail---------------- */
+
+.plant__detail__name {
+    color: #028A0f;
+    font-family: "Caveat";
+    font-size: 40px
+}
+
+.plant__detail__image{
+    margin-top: 1rem;
+    width: 100%;
+    height: 90%;
+    flex-shrink: 0;
+  
+}
+.plant__wateredToday__btn {
+    margin-top: 1rem;
+}
+
+.plant__edit__btn {
+    margin-right: 1rem
+}
+.plant__delete__btn {
+    color: red;
+}
+.plant__done__btn {
+    margin-left: 8rem;
+}
+
+/* ------------Plant Form---------------- */
+
+.plantForm {
+    margin-left: 2rem;
+    margin-right: 1rem;
+    height: 45 rem;
+    background-image: url(https://res.cloudinary.com/kabloom/image/upload/v1612831801/kabloom/Screen_Shot_2021-02-08_at_6.46.01_PM_ujevhh.png);
+    
+}
+#dateAdopted{
+    width: 10rem;
+
+}
+#lastWatered{
+    width: 10rem;
+}
+
