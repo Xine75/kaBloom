@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace kaBloom.Repositories
 {
-    public class UserRepository : BaseRepository
+    public class UserRepository : BaseRepository, IUserRepository
     {
         public UserRepository(IConfiguration configuration) : base(configuration) { }
-        public List<User>GetAll()
+        public List<User> GetAll()
         {
             using (var conn = Connection)
             {
@@ -65,6 +65,93 @@ namespace kaBloom.Repositories
                     }
                     reader.Close();
                     return user;
+                }
+            }
+        }
+        public User GetByFirebaseId(string firebaseId)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                        SELECT u.Id, u.FirebaseId, u.Username, p.Email
+                          FROM User u
+                         WHERE FirebaseId = @FirebaseId";
+
+                    DbUtils.AddParameter(cmd, "@FirebaseId", firebaseId);
+
+                    User user = null;
+
+                    var reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        user = new User()
+                        {
+                            Id = DbUtils.GetInt(reader, "Id"),
+                            FirebaseId = DbUtils.GetString(reader, "FirebaseId"),
+                            Username = DbUtils.GetString(reader, "Username"),
+                            Email = DbUtils.GetString(reader, "Email"),
+                        };
+                    }
+                    reader.Close();
+
+                    return user;
+                }
+            }
+        }
+        public void Add(User user)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                                    INSERT INTO User (Username, FirebaseId, Email)
+                                    OUTPUT INSERTED.ID
+                                    VALUES (@Username, @FirebaseId, @Email)";
+
+                    DbUtils.AddParameter(cmd, "@UserName", user.Username);
+                    DbUtils.AddParameter(cmd, "@FirebaseId", user.FirebaseId);
+                    DbUtils.AddParameter(cmd, "@Email", user.Email);
+
+                    user.Id = (int)cmd.ExecuteScalar();
+                }
+            }
+        }
+        public void Update(User user)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                                    UPDATE User
+                                    SET UserName = @Username,
+                                        Email = @Email,
+                                    WHERE Id = @Id";
+
+                    DbUtils.AddParameter(cmd, "@UserName", user.Username);
+                    DbUtils.AddParameter(cmd, "@Email", user.Email);
+                    DbUtils.AddParameter(cmd, "@Id", user.Id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public void Delete(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM User WHERE Id = @Id";
+                    DbUtils.AddParameter(cmd, "@id", id);
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
