@@ -18,7 +18,7 @@ namespace kaBloom.Repositories
                 conn.Open();
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = @"SELECT Id, Username, Email FROM User ORDER BY Username";
+                    cmd.CommandText = @"SELECT Id, Username, Email FROM [User] ORDER BY Username";
 
 
                     using (var reader = cmd.ExecuteReader())
@@ -47,7 +47,7 @@ namespace kaBloom.Repositories
                 conn.Open();
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT Id, Email, Username FROM User WHERE Id = @Id";
+                    cmd.CommandText = "SELECT Id, Email, Username FROM [User] WHERE Id = @Id";
 
                     DbUtils.AddParameter(cmd, "@Id", id);
 
@@ -77,7 +77,7 @@ namespace kaBloom.Repositories
                 {
                     cmd.CommandText = @"
                         SELECT u.Id, u.FirebaseId, u.Username, p.Email
-                          FROM User u
+                          FROM [User] u
                          WHERE FirebaseId = @FirebaseId";
 
                     DbUtils.AddParameter(cmd, "@FirebaseId", firebaseId);
@@ -109,7 +109,7 @@ namespace kaBloom.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                                    INSERT INTO User (Username, FirebaseId, Email)
+                                    INSERT INTO [User] (Username, FirebaseId, Email)
                                     OUTPUT INSERTED.ID
                                     VALUES (@Username, @FirebaseId, @Email)";
 
@@ -129,7 +129,7 @@ namespace kaBloom.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                                    UPDATE User
+                                    UPDATE [User]
                                     SET UserName = @Username,
                                         Email = @Email,
                                     WHERE Id = @Id";
@@ -149,7 +149,7 @@ namespace kaBloom.Repositories
                 conn.Open();
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = "DELETE FROM User WHERE Id = @Id";
+                    cmd.CommandText = "DELETE FROM [User] WHERE Id = @Id";
                     DbUtils.AddParameter(cmd, "@id", id);
                     cmd.ExecuteNonQuery();
                 }
