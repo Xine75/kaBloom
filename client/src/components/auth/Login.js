@@ -1,68 +1,40 @@
-import Button from "react-bootstrap/Button"
-import React, { useRef } from "react"
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom"
-import "./Login.css"
+import React, { useState, useContext } from "react";
+import { Button, Form, FormGroup, InputGroup } from 'react-bootstrap';
+import { useHistory, Link } from "react-router-dom";
+import { UserProfileContext } from "./../Providers/UserProfileProvider";
 
+export default function Login() {
+    const history = useHistory();
+    const { login } = useContext(UserProfileContext);
 
-export const Login = props => {
-    const email = useRef()
-    const password = useRef()
-    const existDialog = useRef()
-    const history = useHistory()
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
 
-    const existingUserCheck = () => {
-        return fetch(`http://localhost:8080/users?email=${email.current.value}`)
-            .then(res => res.json())
-            .then(user => user.length ? user[0] : false)
-    }
-
-    const handleLogin = (e) => {
-        e.preventDefault()
-
-        existingUserCheck()
-            .then(exists => {
-                if (exists) {
-                    sessionStorage.setItem("kabloom_user", exists.id)
-                    history.push("/plants")
-                } else {
-                    existDialog.current.showModal()
-                }
-            })
-    }
+    const loginSubmit = (e) => {
+        e.preventDefault();
+        login(email, password)
+            .then(() => history.push("/"))
+            .catch(() => alert("Invalid email or password"));
+    };
 
     return (
-        <>
-        <main className="container--login">
-            <dialog className="dialog dialog--auth" ref={existDialog}>
-                <div>User does not exist</div>
-                <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
-            </dialog>
-
-            <section>
-                <form className="form--login" onSubmit={handleLogin}>
-                    <h1 className="form--login__title"></h1>
-                    <h4>Please sign in</h4>
-                    <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
-                        <input ref={email} type="email"
-                            id="email"
-                            className="form-control"
-                            placeholder="Email address"
-                            required autoFocus />
-                    </fieldset>
-                    <br/>
-                    <fieldset>
-                        <Button className="login__btn"type="submit" variant="success">
-                            Sign in
-                        </Button>
-                    </fieldset>
-                </form>
-            </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
-            </section>
-        </main>
-        </>
-    )
+        <Form>
+            <fieldset>
+                <FormGroup>
+                    <InputGroup.Text for="email">Email</InputGroup.Text>
+                    <input id="email" type="text" onChange={e => setEmail(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <InputGroup.Text for="password">Password</InputGroup.Text>
+                    <input id="password" type="password" onChange={e => setPassword(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <Button onClick={loginSubmit}>Login</Button>
+                </FormGroup>
+                <em>
+                    Not registered? <Link to="register">Register</Link>
+                </em>
+            </fieldset>
+        </Form>
+    );
 }
