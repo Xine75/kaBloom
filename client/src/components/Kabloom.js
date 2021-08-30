@@ -1,8 +1,7 @@
 import React from "react";
 import { Route, Redirect, Link } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationViews";
-import { Login } from "./auth/Login";
-import { Register } from "./auth/Register";
+import { UserProfileProvider } from "./auth/LogInProvider";
 import Col from "react-bootstrap/Col"
 import Image from "react-bootstrap/Image"
 import "./Kabloom.css";
@@ -14,8 +13,8 @@ export const Kabloom = () => (
         if (sessionStorage.getItem("kabloom_user")) {
           return (
             <>
-              <Col className="heading__center"><Link to={"/plants"}><Image className="logo" src="https://res.cloudinary.com/kabloom/image/upload/c_scale,w_101/v1612993232/kabloom/kaBloomLogo2_pismua.png"/></Link></Col>
-             
+              <Col className="heading__center"><Link to={"/plants"}><Image className="logo" src="https://res.cloudinary.com/kabloom/image/upload/c_scale,w_101/v1612993232/kabloom/kaBloomLogo2_pismua.png" /></Link></Col>
+
               <ApplicationViews />
             </>
           );

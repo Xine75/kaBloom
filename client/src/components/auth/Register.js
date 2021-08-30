@@ -1,78 +1,61 @@
-import React, { useRef } from "react"
-import { useHistory } from "react-router-dom"
-import Button from "react-bootstrap/Button"
-import "./Login.css"
+import React, { useState, useContext } from "react";
+import { Button, Form, FormGroup, InputGroup } from 'react-bootstrap';
+import { useHistory } from "react-router-dom";
+import { UserProfileContext } from "./../Providers/UserProfileProvider";
 
-export const Register = (props) => {
-    const userName = useRef()
-    const email = useRef()
-    const verifyPassword = useRef()
-    const conflictDialog = useRef()
-    const history = useHistory()
+export default function Register() {
+    const history = useHistory();
+    const { register } = useContext(UserProfileContext);
 
-    const existingUserCheck = () => {
-        return fetch(`http://localhost:8080/users?email=${email.current.value}`)
-            .then(res => res.json())
-            .then(user => !!user.length)
-    }
+    const [firstName, setFirstName] = useState();
+    const [lastName, setLastName] = useState();
+    const [userName, setUserName] = useState();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    const [confirmPassword, setConfirmPassword] = useState();
 
-    const handleRegister = (e) => {
-        e.preventDefault()
-
-
-        existingUserCheck()
-            .then((userExists) => {
-                if (!userExists) {
-                    fetch("http://localhost:8080/users", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            email: email.current.value,
-                            name: `${userName.current.value}`
-                        })
-                    })
-                        .then(res => res.json())
-                        .then(createdUser => {
-                            if (createdUser.hasOwnProperty("id")) {
-                                sessionStorage.setItem("kabloom_user", createdUser.id)
-                                history.push("/")
-                            }
-                        })
-                }
-                else {
-                    conflictDialog.current.showModal()
-                }
-            })
-        
-    }
+    const registerClick = (e) => {
+        e.preventDefault();
+        if (password && password !== confirmPassword) {
+            alert("Passwords don't match. Do better.");
+        } else {
+            const userProfile = { firstName, lastName, userName, email };
+            register(userProfile, password)
+                .then(() => history.push("/"));
+        }
+    };
 
     return (
-        <>
-        <main style={{ textAlign: "center" }}>
-
-            <dialog className="dialog dialog--password" ref={conflictDialog}>
-                <div>Account with that email address already exists</div>
-                <button className="button--close" onClick={e => conflictDialog.current.close()}>Close</button>
-            </dialog>
-
-            <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for KaBloom</h1>
-                <fieldset>
-                    <label htmlFor="firstName"> User Name </label>
-                    <input ref={userName} type="text" name="userName" className="form-control" placeholder="First name" required autoFocus />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="inputEmail"> Email address </label>
-                    <input ref={email} type="email" name="email" className="form-control" placeholder="Email address" required />
-                </fieldset>
-                <br/>
-                <fieldset>
-                    <Button type="submit"> Sign in </Button>
-                </fieldset>
-            </form>
-        </main>
-        </>
-    )
+        <Form>
+            <fieldset>
+                <FormGroup>
+                    <InputGroup.Text for="firstName">First Name</InputGroup.Text>
+                    <input id="firstName" type="text" onChange={e => setFirstName(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <InputGroup.Text for="lastName">Last Name</InputGroup.Text>
+                    <input id="lastName" type="text" onChange={e => setLastName(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <InputGroup.Text for="userName">Display Name</InputGroup.Text>
+                    <input id="userName" type="text" onChange={e => setUserName(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <InputGroup.Text for="email">Email</InputGroup.Text>
+                    <input id="email" type="text" onChange={e => setEmail(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <InputGroup.Text for="password">Password</InputGroup.Text>
+                    <input id="password" type="password" onChange={e => setPassword(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <InputGroup.Text for="confirmPassword">Confirm Password</InputGroup.Text>
+                    <input id="confirmPassword" type="password" onChange={e => setConfirmPassword(e.target.value)} />
+                </FormGroup>
+                <FormGroup>
+                    <Button onClick={registerClick}>Register</Button>
+                </FormGroup>
+            </fieldset>
+        </Form>
+    );
 }
