@@ -23,13 +23,17 @@ export const Kabloom = () => (
         }
       }}
     />
+    <UserProfileProvider>
+      <Route path="/login">
+        <Login />
+      </Route>
+    </UserProfileProvider>
 
-    <Route path="/login">
-      <Login />
-    </Route>
-    <Route path="/register">
-      <Register />
-    </Route>
+    <UserProfileProvider>
+      <Route path="/register">
+        <Register />
+      </Route>
+    </UserProfileProvider>
   </>
 );
 
