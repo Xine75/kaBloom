@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Button, Form, FormGroup, InputGroup } from 'react-bootstrap';
 import { useHistory, Link } from "react-router-dom";
-import { UserProfileContext } from "./../Providers/UserProfileProvider";
+import { UserProfileContext } from "./LogInProvider";
 
 export default function Login() {
     const history = useHistory();
