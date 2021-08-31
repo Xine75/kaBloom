@@ -19,3 +19,12 @@ SET IDENTITY_INSERT [Plant] OFF
 
 SET IDENTITY_INSERT [Note] ON
 INSERT INTO [Note]
+([id], [plantId], [date], [text])
+VALUES
+(1, 1, SYSDATETIME(), 'Repotted'),
+(2, 1, SYSDATETIME(), 'Bloomed'),
+(3, 2, SYSDATETIME(), 'I played Mozart for her'),
+(4, 2, SYSDATETIME(), 'Some leaves turned yellow'),
+(5, 3, SYSDATETIME(), 'Lemon knocked her down the stairs');
+SET IDENTITY_INSERT [Note] OFF
+
