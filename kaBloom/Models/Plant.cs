@@ -8,6 +8,7 @@ namespace kaBloom.Models
     public class Plant
     {
         public int Id { get; set; }
+        public int UserId { get; set; }
         public string Type { get; set; }
         public string Name { get; set; }
         public DateTime DateAdopted { get; set; }
@@ -27,12 +28,12 @@ namespace kaBloom.Models
         }
 
         //constructor to identify plant
-        public Plant (string type, string name, string image)
-        {
-            Name = name;
-            Type = type;
-            ImageUrl = image;
-        }
+        //public Plant (string type, string name, string image)
+        //{
+        //    Name = name;
+        //    Type = type;
+        //    ImageUrl = image;
+        //}
 
     }
 }
