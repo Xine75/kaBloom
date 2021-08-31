@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import firebase from "firebase/app";
+import * as firebase from "firebase/app";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Route } from "react-router-dom"
