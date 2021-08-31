@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Redirect, Link } from "react-router-dom";
 import { ApplicationViews } from "./ApplicationViews";
 import { UserProfileProvider } from "./auth/LogInProvider";
+import Login from "./auth/Login";
+import Register from "./auth/Register";
 import Col from "react-bootstrap/Col"
 import Image from "react-bootstrap/Image"
 import "./Kabloom.css";
@@ -23,13 +25,17 @@ export const Kabloom = () => (
         }
       }}
     />
+    <UserProfileProvider>
+      <Route path="/login">
+        <Login />
+      </Route>
+    </UserProfileProvider>
 
-    <Route path="/login">
-      <Login />
-    </Route>
-    <Route path="/register">
-      <Register />
-    </Route>
+    <UserProfileProvider>
+      <Route path="/register">
+        <Register />
+      </Route>
+    </UserProfileProvider>
   </>
 );
 
